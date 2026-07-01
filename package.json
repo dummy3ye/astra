@@ -1,0 +1,29 @@
+{
+  "name": "gallium-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @gallium/bot",
+    "start": "npm run start -w @gallium/bot",
+    "build": "npm run build -w @gallium/shared && npm run build -w @gallium/bot",
+    "deploy": "npm run deploy -w @gallium/bot",
+    "lint": "eslint packages/",
+    "lint:ox": "oxlint packages/",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "prisma:generate": "npm run prisma:generate -w @gallium/bot",
+    "prisma:migrate": "npm run prisma:migrate -w @gallium/bot"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "eslint": "^8.57.1",
+    "oxlint": "^1.72.0",
+    "prettier": "^3.9.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.2.4"
+  }
+}

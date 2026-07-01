@@ -1,0 +1,9 @@
+generator dashboardClient {
+  provider = "prisma-client-js"
+  output   = "prisma/client"
+}
+
+element Auth {
+  id    Int    @id
+}
+

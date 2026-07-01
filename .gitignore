@@ -1,0 +1,41 @@
+# Dependencies
+dist/
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build artifacts
+build/
+dist/
+*.log
+*.pid
+*.lock*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Prisma
+*/prisma/client/
+
+# Test coverage
+coverage/
+*.lcov
+
+# Log files
+*.log
+
+# Editor temp files
+*~
+.DS_Store

@@ -1,0 +1,26 @@
+{
+  "name": "@gallium/dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node src/server.ts",
+    "build": "tsc",
+    "lint": "eslint src",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "rate-limiter-flexible": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "eslint": "^8.57.1",
+    "prettier": "^3.9.1"
+  }
+}

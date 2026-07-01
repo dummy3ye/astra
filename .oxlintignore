@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Prisma generated client
+packages/*/src/generated/
+src/generated/
+
+# Prisma migrations (auto-generated SQL)
+packages/*/prisma/migrations/
+
+# Config files (not linted source)
+*.config.ts
+*.config.js
+prisma.config.ts
+
+# Test snapshots
+**/__snapshots__/
+
+# Misc
+*.d.ts

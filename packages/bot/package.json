@@ -1,0 +1,26 @@
+{
+  "name": "@gallium/bot",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "deploy": "ts-node src/deploy-commands.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@gallium/shared": "*",
+    "@libsql/client": "^0.17.4",
+    "@prisma/adapter-libsql": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "prisma": "^7.8.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
