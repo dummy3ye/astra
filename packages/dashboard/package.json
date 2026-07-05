@@ -14,7 +14,7 @@
     "@ts-rest/core": "^3.30.0",
     "@ts-rest/express": "^3.30.0",
     "@vitejs/plugin-react": "6.0.3",
-    "bcryptjs": "^2.4.3",
+    "bcryptjs": "^3.0.3",
     "chart.js": "4.5.1",
     "cors": "^2.8.5",
     "express": "^4.21.0",
