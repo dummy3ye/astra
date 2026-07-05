@@ -8,6 +8,9 @@
     "start": "node dist/index.js",
     "build": "tsc",
     "deploy": "ts-node src/deploy-commands.ts",
+    "test": "vitest run",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev"
   },

@@ -9,6 +9,9 @@
     "@ts-rest/core": "^3.30.0"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
   }
 }

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node src/server.ts",
     "build": "tsc -p tsconfig.api.json",
+    "test": "vitest run",
     "lint": "eslint src",
+    "typecheck": "tsc --noEmit -p tsconfig.api.json",
     "format": "prettier --write src"
   },
   "dependencies": {
