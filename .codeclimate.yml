@@ -1,0 +1,23 @@
+version: "2"
+plugins:
+  eslint:
+    enabled: true
+    channel: "eslint-8"
+    config:
+      config: .eslintrc.json
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - typescript
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: false
+exclude_patterns:
+  - "**/node_modules/"
+  - "**/dist/"
+  - "**/coverage/"
+  - "**/*.test.ts"
+  - "**/*.d.ts"
+  - "**/tests/"

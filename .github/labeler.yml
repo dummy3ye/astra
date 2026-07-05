@@ -1,0 +1,24 @@
+bot:
+  - packages/bot/**/*
+
+dashboard:
+  - packages/dashboard/**/*
+
+shared:
+  - packages/shared/**/*
+
+ci:
+  - .github/**/*
+
+deps:
+  - package.json
+  - packages/*/package.json
+
+docker:
+  - Dockerfile*
+  - .dockerignore
+
+docs:
+  - CHANGELOG.md
+  - README.md
+  - "**/*.md"

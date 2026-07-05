@@ -1,0 +1,45 @@
+image: node:26
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
+    - .turbo/
+
+before_script:
+  - npm ci
+  - npm run prisma:generate
+
+stages:
+  - test
+  - lint
+  - build
+
+test:
+  stage: test
+  script:
+    - npm run test:coverage
+  coverage: '/All files\s*\|\s*([\d.]+)/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: lcov
+        path: coverage/lcov.info
+  after_script:
+    - curl -Os https://uploader.codecov.io/latest/linux/codecov
+    - chmod +x codecov
+    - ./codecov -f coverage/lcov.info -t $CODECOV_TOKEN || true
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > cc-reporter
+    - chmod +x cc-reporter
+    - ./cc-reporter after-build -t lcov --id $CC_TEST_REPORTER_ID || true
+
+lint:
+  stage: lint
+  script:
+    - npm run lint
+    - npm run format:check
+
+build:
+  stage: build
+  script:
+    - npm run build

@@ -1,0 +1,28 @@
+FROM node:26-alpine AS builder
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+COPY packages/shared/package.json packages/shared/
+COPY packages/dashboard/package.json packages/dashboard/
+COPY packages/bot/package.json packages/bot/
+RUN npm ci
+
+COPY . .
+RUN npx prisma generate --schema=packages/bot/prisma/schema.prisma
+RUN npm run build -w @astra/shared && npm run build -w @astra/dashboard
+
+FROM node:26-alpine AS runner
+WORKDIR /app
+
+RUN apk add --no-cache tini
+ENTRYPOINT ["/sbin/tini", "--"]
+
+COPY --from=builder /app/packages/dashboard/dist ./packages/dashboard/dist
+COPY --from=builder /app/packages/shared/dist ./packages/shared/dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/packages/dashboard/package.json ./packages/dashboard/package.json
+
+ENV NODE_ENV=production
+EXPOSE 3001
+CMD ["node", "packages/dashboard/dist/api/index.js"]

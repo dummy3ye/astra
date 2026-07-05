@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id          String    @id
+  guildId     String
+  xp          Int       @default(0)
+  level       Int       @default(1)
+  username    String?
+  displayName String?
+  avatar      String?
+  warnings    Warning[]
+
+  @@unique([id, guildId])
+}
+
+model ServerSettings {
+  guildId               String @id
+  name                  String?
+  icon                  String?
+  prefix                String @default("!")
+  welcomeChannelId      String?
+  logChannelId          String?
+  blockedWords          String?
+  blockLinks            Boolean @default(false)
+  warnTimeoutThreshold  Int?
+  warnBanThreshold      Int?
+  levelRoles            LevelRole[]
+}
+
+model LevelRole {
+  id        Int    @id @default(autoincrement())
+  guildId   String
+  level     Int
+  roleId    String
+  settings  ServerSettings @relation(fields: [guildId], references: [guildId])
+
+  @@unique([guildId, level])
+}
+
+model Warning {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  guildId   String
+  reason    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId, guildId], references: [id, guildId])
+}
+
+model AuditLog {
+  id             Int      @id @default(autoincrement())
+  guildId        String
+  action         String
+  targetId       String
+  targetName     String?
+  moderatorId    String?
+  moderatorName  String?
+  reason         String?
+  createdAt      DateTime @default(now())
+}

@@ -1,0 +1,27 @@
+name: Lighthouse
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "26"
+          cache: npm
+      - run: npm ci
+      - run: npm run prisma:generate
+      - name: Create test database
+        working-directory: packages/bot
+        run: npx prisma db push
+        env:
+          DATABASE_URL: file:./dev.db
+      - run: npm run build -w @astra/dashboard
+      - run: npx lhci autorun
+        env:
+          DATABASE_URL: file:../bot/dev.db
