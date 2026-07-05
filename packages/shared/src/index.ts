@@ -1,3 +1,6 @@
+export { contract } from './contract';
+export type { Stats, Server, User, Warning, AuditEntry } from './types';
+
 export const AuditActions = {
   BAN: 'ban',
   KICK: 'kick',

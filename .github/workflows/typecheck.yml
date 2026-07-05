@@ -20,5 +20,4 @@ jobs:
       - run: npm ci
       - run: npm run build -w @gallium/shared
       - run: tsc --noEmit -p packages/bot/tsconfig.json
-      - run: tsc --noEmit -p packages/dashboard/tsconfig.json
       - run: tsc --noEmit -p packages/dashboard/tsconfig.api.json

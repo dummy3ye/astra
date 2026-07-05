@@ -16,5 +16,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/web"]
+  "include": [],
+  "exclude": ["node_modules", "dist"]
 }

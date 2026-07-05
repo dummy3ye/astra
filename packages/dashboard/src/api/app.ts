@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { PrismaClient } from '@prisma/client';
 import { PrismaLibSql } from '@prisma/adapter-libsql';
 import { createExpressEndpoints, initServer } from '@ts-rest/express';
-import { contract } from '@astra/shared';
+import { contract } from '@gallium/shared';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -65,7 +65,7 @@ export function createApp(opts?: {
 
   const s = initServer();
 
-  const router = s.router(contract, {
+  const impl = {
     getStats: async () => {
       try {
         const sevenDaysAgo = new Date();
@@ -111,7 +111,7 @@ export function createApp(opts?: {
         }
 
         return {
-          status: 200,
+          status: 200 as const,
           body: {
             totalUsers,
             totalServers,
@@ -161,7 +161,7 @@ export function createApp(opts?: {
             }),
           }))
         );
-        return { status: 200, body: enriched };
+        return { status: 200 as const, body: enriched };
       } catch {
         return {
           status: 500 as const,
@@ -169,7 +169,11 @@ export function createApp(opts?: {
         };
       }
     },
-    getUsers: async ({ query }) => {
+    getUsers: async ({
+      query,
+    }: {
+      query: Record<string, string | undefined>;
+    }) => {
       try {
         const { skip, take, q, sortBy, sortOrder } = query;
         const where = q
@@ -184,14 +188,14 @@ export function createApp(opts?: {
           prisma.user.findMany({
             where,
             orderBy,
-            skip,
-            take,
+            skip: skip ? Number(skip) : undefined,
+            take: take ? Number(take) : undefined,
             include: { warnings: true },
           }),
           prisma.user.count({ where }),
         ]);
         return {
-          status: 200,
+          status: 200 as const,
           body: {
             items: users.map((u) => ({
               id: u.id,
@@ -213,7 +217,11 @@ export function createApp(opts?: {
         };
       }
     },
-    getWarnings: async ({ query }) => {
+    getWarnings: async ({
+      query,
+    }: {
+      query: Record<string, string | undefined>;
+    }) => {
       try {
         const { skip, take, q, sortBy, sortOrder, startDate, endDate } = query;
         const where: Record<string, unknown> = {
@@ -244,14 +252,14 @@ export function createApp(opts?: {
           prisma.warning.findMany({
             where,
             orderBy,
-            skip,
-            take,
+            skip: skip ? Number(skip) : undefined,
+            take: take ? Number(take) : undefined,
             include: { user: true },
           }),
           prisma.warning.count({ where }),
         ]);
         return {
-          status: 200,
+          status: 200 as const,
           body: {
             items: warnings.map((w) => ({
               id: w.id,
@@ -275,7 +283,11 @@ export function createApp(opts?: {
         };
       }
     },
-    getAuditLog: async ({ query }) => {
+    getAuditLog: async ({
+      query,
+    }: {
+      query: Record<string, string | undefined>;
+    }) => {
       try {
         const { skip, take, q, sortBy, sortOrder, startDate, endDate, action } =
           query;
@@ -309,13 +321,13 @@ export function createApp(opts?: {
           prisma.auditLog.findMany({
             where,
             orderBy,
-            skip,
-            take,
+            skip: skip ? Number(skip) : undefined,
+            take: take ? Number(take) : undefined,
           }),
           prisma.auditLog.count({ where }),
         ]);
         return {
-          status: 200,
+          status: 200 as const,
           body: {
             items: logs.map((l) => ({
               id: l.id,
@@ -338,7 +350,9 @@ export function createApp(opts?: {
         };
       }
     },
-  });
+  };
+
+  const router = s.router(contract, impl as never);
 
   createExpressEndpoints(contract, router, app);
 

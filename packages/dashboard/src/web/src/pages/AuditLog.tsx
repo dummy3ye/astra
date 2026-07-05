@@ -6,7 +6,7 @@ import SortableHeader from '../components/SortableHeader';
 import ExportButton from '../components/ExportButton';
 import FilterBar from '../components/FilterBar';
 import { useTableState } from '../hooks/useTableState';
-import { AuditActions } from '@astra/shared';
+import { AuditActions } from '@gallium/shared';
 import type { AuditEntry } from '../types';
 
 const PAGE_SIZE = 20;

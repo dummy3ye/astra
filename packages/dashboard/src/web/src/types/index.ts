@@ -1,1 +1,1 @@
-export type { Stats, Server, User, Warning, AuditEntry } from '@astra/shared';
+export type { Stats, Server, User, Warning, AuditEntry } from '@gallium/shared';
