@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/dummy3ye/astra/compare/v1.3.0...v1.3.1) (2026-07-05)
+
+
+### Bug Fixes
+
+* resolve CI/CD workflow failures and TypeScript errors ([50b4ff6](https://github.com/dummy3ye/astra/commit/50b4ff6419c8c4e078560270eaf11d9d261debe3))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
