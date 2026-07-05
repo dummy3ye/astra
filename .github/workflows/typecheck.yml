@@ -6,7 +6,7 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: "26"
+  NODE_VERSION: '26'
 
 jobs:
   typecheck:
@@ -18,7 +18,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci
-      - run: npm run build -w @astra/shared
+      - run: npm run build -w @gallium/shared
       - run: tsc --noEmit -p packages/bot/tsconfig.json
       - run: tsc --noEmit -p packages/dashboard/tsconfig.json
       - run: tsc --noEmit -p packages/dashboard/tsconfig.api.json

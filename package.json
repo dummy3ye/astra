@@ -14,6 +14,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "prisma:generate": "npm run prisma:generate -w @gallium/bot",
     "prisma:migrate": "npm run prisma:migrate -w @gallium/bot"
   },

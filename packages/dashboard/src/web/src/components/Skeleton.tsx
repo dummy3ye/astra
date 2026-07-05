@@ -2,19 +2,19 @@ import { useEffect, useState } from 'react';
 
 export function SkeletonLine({ width = '100%' }: { width?: string }) {
   return (
-    <div
-      className="skeleton"
-      style={{ width, height: 14, borderRadius: 4 }}
-    />
+    <div className="skeleton" style={{ width, height: 14, borderRadius: 4 }} />
   );
 }
 
-export function SkeletonBlock({ width = '100%', height = 40 }: { width?: string; height?: number }) {
+export function SkeletonBlock({
+  width = '100%',
+  height = 40,
+}: {
+  width?: string;
+  height?: number;
+}) {
   return (
-    <div
-      className="skeleton"
-      style={{ width, height, borderRadius: 8 }}
-    />
+    <div className="skeleton" style={{ width, height, borderRadius: 8 }} />
   );
 }
 
@@ -28,7 +28,13 @@ export function StatsCardSkeleton() {
   );
 }
 
-export function TableSkeleton({ rows = 5, cols = 4 }: { rows?: number; cols?: number }) {
+export function TableSkeleton({
+  rows = 5,
+  cols = 4,
+}: {
+  rows?: number;
+  cols?: number;
+}) {
   return (
     <div className="table-wrapper">
       <table className="data-table skeleton-table">

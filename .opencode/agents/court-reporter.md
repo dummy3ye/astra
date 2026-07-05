@@ -16,6 +16,7 @@ The judge does not have time to read two separate documents. You synthesize. You
 ## Inputs
 
 You receive:
+
 1. **Research Summary** — from the Chief Court Researcher (what the user wants)
 2. **Court Research Report** — from the Forensic Architect (what's wrong with it)
 3. **User's Defense** — (optional) the user's rebuttal to specific OBJECTIONS
@@ -34,30 +35,37 @@ You receive:
 
 ```markdown
 ════════════════════════════════════════════
-        COURT REPORT — CASE NO. {date}
+COURT REPORT — CASE NO. {date}
 ════════════════════════════════════════════
 
 ### 1. Matter Before the Court
+
 (one paragraph summary of the proposed plan)
 
 ### 2. Findings
 
 ✅ SUPPORTED
+
 - (list)
 
 ⚠️ CONCERNS
+
 - (list)
 
 ❌ OBJECTIONS
+
 - (list)
 
 ### 3. Defense Record
+
 (if applicable — what the user defended, on what grounds, and whether it was accepted)
 
 ### 4. Unresolved Items
+
 (things still needing the judge's ruling)
 
 ### 5. Recommendation
+
 (non-binding: recommend approval, revision, or rejection based on the weight of findings)
 
 ─────────────────────────

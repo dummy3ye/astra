@@ -21,4 +21,4 @@ docker:
 docs:
   - CHANGELOG.md
   - README.md
-  - "**/*.md"
+  - '**/*.md'

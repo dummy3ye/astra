@@ -27,6 +27,7 @@ This runs all automated checks at once and outputs structured JSON. Parse the ou
 ## Section 1 — Secrets & Credential Leaks (Automated)
 
 Run:
+
 ```bash
 node scripts/poison-test.mjs secrets
 ```
@@ -34,6 +35,7 @@ node scripts/poison-test.mjs secrets
 This scans all source files in `packages/` for hardcoded API keys, passwords, connection strings, private keys, and AWS keys. Parse the JSON output and report findings as CRITICAL.
 
 Then verify the VSCode settings and git history manually:
+
 - Use `bash` to run `git log --all --diff-filter=A -- '.vscode/settings.json'` — check if secrets were ever committed
 - Use `read` on `.vscode/settings.json` if it exists
 
@@ -42,6 +44,7 @@ Then verify the VSCode settings and git history manually:
 ## Section 2 — Dependency Vulnerabilities (Automated)
 
 Run:
+
 ```bash
 node scripts/poison-test.mjs deps
 ```
@@ -53,6 +56,7 @@ This runs `npm audit --omit=dev` and `npm outdated` in one step. Parse the JSON 
 ## Section 3 — Lint Quality (Automated)
 
 Run:
+
 ```bash
 node scripts/poison-test.mjs lint
 ```
@@ -64,6 +68,7 @@ This runs ESLint and Prettier check. Parse the JSON output and summarize.
 ## Section 4 — Debug & Leftover Code (Automated)
 
 Run:
+
 ```bash
 node scripts/poison-test.mjs debug
 ```
@@ -75,6 +80,7 @@ Detects `console.log` (non-test), `debugger`, `it.only`/`describe.only`, TODO/FI
 ## Section 5 — Injection Vectors (Automated)
 
 Run:
+
 ```bash
 node scripts/poison-test.mjs injection
 ```
@@ -141,18 +147,23 @@ After all checks complete, output a summary:
 ## Poison Test Results
 
 ### CRITICAL (must fix before deploy)
+
 - ...
 
 ### HIGH
+
 - ...
 
 ### MEDIUM
+
 - ...
 
 ### LOW
+
 - ...
 
 ### Passed Checks
+
 - [x] Secrets scan — no leaks found
 - [x] Dependency audit — all clear
 - ...

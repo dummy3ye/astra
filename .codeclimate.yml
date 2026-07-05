@@ -1,8 +1,8 @@
-version: "2"
+version: '2'
 plugins:
   eslint:
     enabled: true
-    channel: "eslint-8"
+    channel: 'eslint-8'
     config:
       config: .eslintrc.json
   duplication:
@@ -15,9 +15,9 @@ plugins:
   markdownlint:
     enabled: false
 exclude_patterns:
-  - "**/node_modules/"
-  - "**/dist/"
-  - "**/coverage/"
-  - "**/*.test.ts"
-  - "**/*.d.ts"
-  - "**/tests/"
+  - '**/node_modules/'
+  - '**/dist/'
+  - '**/coverage/'
+  - '**/*.test.ts'
+  - '**/*.d.ts'
+  - '**/tests/'

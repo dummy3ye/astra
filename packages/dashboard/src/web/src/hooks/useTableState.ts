@@ -12,7 +12,10 @@ export function useTableState(opts: UseTableStateOptions = {}) {
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
 
   const sortBy = searchParams.get('sortBy') || opts.defaultSortBy || undefined;
-  const sortOrder = (searchParams.get('sortOrder') as 'asc' | 'desc') || opts.defaultSortOrder || 'asc';
+  const sortOrder =
+    (searchParams.get('sortOrder') as 'asc' | 'desc') ||
+    opts.defaultSortOrder ||
+    'asc';
   const page = Number(searchParams.get('page')) || 1;
   const search = searchParams.get('q') || '';
 
@@ -43,7 +46,7 @@ export function useTableState(opts: UseTableStateOptions = {}) {
         return next;
       });
     },
-    [setSearchParams],
+    [setSearchParams]
   );
 
   const setSortBy = useCallback(
@@ -55,7 +58,7 @@ export function useTableState(opts: UseTableStateOptions = {}) {
         updateParams({ sortBy: field, sortOrder: 'asc', page: undefined });
       }
     },
-    [sortBy, sortOrder, updateParams],
+    [sortBy, sortOrder, updateParams]
   );
 
   const clearSort = useCallback(() => {
@@ -66,7 +69,7 @@ export function useTableState(opts: UseTableStateOptions = {}) {
     (n: number) => {
       updateParams({ page: String(n) });
     },
-    [updateParams],
+    [updateParams]
   );
 
   const setSearch = useCallback(
@@ -76,21 +79,24 @@ export function useTableState(opts: UseTableStateOptions = {}) {
         updateParams({ q: value || undefined, page: undefined });
       }, 300);
     },
-    [updateParams],
+    [updateParams]
   );
 
   const setFilter = useCallback(
     (field: string, value: string) => {
-      updateParams({ [`filter_${field}`]: value || undefined, page: undefined });
+      updateParams({
+        [`filter_${field}`]: value || undefined,
+        page: undefined,
+      });
     },
-    [updateParams],
+    [updateParams]
   );
 
   const removeFilter = useCallback(
     (field: string) => {
       updateParams({ [`filter_${field}`]: undefined });
     },
-    [updateParams],
+    [updateParams]
   );
 
   const clearFilters = useCallback(() => {
@@ -105,14 +111,14 @@ export function useTableState(opts: UseTableStateOptions = {}) {
     (date: string | undefined) => {
       updateParams({ startDate: date || undefined, page: undefined });
     },
-    [updateParams],
+    [updateParams]
   );
 
   const setDateTo = useCallback(
     (date: string | undefined) => {
       updateParams({ endDate: date || undefined, page: undefined });
     },
-    [updateParams],
+    [updateParams]
   );
 
   return {

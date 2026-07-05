@@ -41,18 +41,24 @@ export const settingsCommand: Command = {
     .addSubcommand((s) =>
       s
         .setName('warn-escalation')
-        .setDescription('Configure automatic actions when warning thresholds are reached.')
+        .setDescription(
+          'Configure automatic actions when warning thresholds are reached.'
+        )
         .addIntegerOption((o) =>
           o
             .setName('timeout_at')
-            .setDescription('Auto-timeout user when they reach this many warnings (0 to disable).')
+            .setDescription(
+              'Auto-timeout user when they reach this many warnings (0 to disable).'
+            )
             .setMinValue(0)
             .setRequired(false)
         )
         .addIntegerOption((o) =>
           o
             .setName('ban_at')
-            .setDescription('Auto-ban user when they reach this many warnings (0 to disable).')
+            .setDescription(
+              'Auto-ban user when they reach this many warnings (0 to disable).'
+            )
             .setMinValue(0)
             .setRequired(false)
         )
@@ -62,7 +68,9 @@ export const settingsCommand: Command = {
     .addSubcommand((s) =>
       s
         .setName('level-role')
-        .setDescription('Grant a role automatically when a user reaches a level.')
+        .setDescription(
+          'Grant a role automatically when a user reaches a level.'
+        )
         .addIntegerOption((o) =>
           o
             .setName('level')
@@ -73,7 +81,9 @@ export const settingsCommand: Command = {
         .addRoleOption((o) =>
           o
             .setName('role')
-            .setDescription('The role to grant. Leave empty to remove the reward for this level.')
+            .setDescription(
+              'The role to grant. Leave empty to remove the reward for this level.'
+            )
             .setRequired(false)
         )
     ) as SlashCommandBuilder,
@@ -116,17 +126,19 @@ export const settingsCommand: Command = {
           },
           {
             name: '🎖️ Level Roles',
-            value:
-              settings?.levelRoles.length
-                ? settings.levelRoles
-                    .map((lr) => `• Level ${lr.level} → <@&${lr.roleId}>`)
-                    .join('\n')
-                : 'No level roles configured',
+            value: settings?.levelRoles.length
+              ? settings.levelRoles
+                  .map((lr) => `• Level ${lr.level} → <@&${lr.roleId}>`)
+                  .join('\n')
+              : 'No level roles configured',
           }
         )
         .setTimestamp();
 
-      return void (await interaction.reply({ embeds: [embed], ephemeral: true }));
+      return void (await interaction.reply({
+        embeds: [embed],
+        ephemeral: true,
+      }));
     }
 
     // ── channels ──────────────────────────────────────────────────────────────
@@ -155,9 +167,13 @@ export const settingsCommand: Command = {
 
       const lines = [];
       if (logChannel !== undefined)
-        lines.push(`• Log channel: ${logChannel ? `<#${logChannel.id}>` : 'cleared'}`);
+        lines.push(
+          `• Log channel: ${logChannel ? `<#${logChannel.id}>` : 'cleared'}`
+        );
       if (welcomeChannel !== undefined)
-        lines.push(`• Welcome channel: ${welcomeChannel ? `<#${welcomeChannel.id}>` : 'cleared'}`);
+        lines.push(
+          `• Welcome channel: ${welcomeChannel ? `<#${welcomeChannel.id}>` : 'cleared'}`
+        );
 
       return void (await interaction.reply({
         content: `✅ Channels updated:\n${lines.join('\n')}`,
@@ -195,7 +211,9 @@ export const settingsCommand: Command = {
           `• Auto-timeout at: ${timeoutAt === 0 ? 'Disabled' : `${timeoutAt} warnings`}`
         );
       if (banAt !== null)
-        lines.push(`• Auto-ban at: ${banAt === 0 ? 'Disabled' : `${banAt} warnings`}`);
+        lines.push(
+          `• Auto-ban at: ${banAt === 0 ? 'Disabled' : `${banAt} warnings`}`
+        );
 
       return void (await interaction.reply({
         content: `✅ Warning escalation updated:\n${lines.join('\n')}`,

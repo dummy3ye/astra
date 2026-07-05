@@ -87,7 +87,8 @@ export const warnCommand: Command = {
         });
         escalationNote = `\n🔨 **Auto-banned** for reaching ${count} warnings.`;
       } catch {
-        escalationNote = '\n⚠️ Could not auto-ban user (check bot permissions).';
+        escalationNote =
+          '\n⚠️ Could not auto-ban user (check bot permissions).';
       }
     } else if (
       settings?.warnTimeoutThreshold &&
@@ -108,7 +109,8 @@ export const warnCommand: Command = {
         });
         escalationNote = `\n⏱️ **Auto-timed out for 1 hour** for reaching ${count} warnings.`;
       } catch {
-        escalationNote = '\n⚠️ Could not auto-timeout user (check bot permissions).';
+        escalationNote =
+          '\n⚠️ Could not auto-timeout user (check bot permissions).';
       }
     }
 

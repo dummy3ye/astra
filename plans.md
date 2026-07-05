@@ -1,4 +1,5 @@
 # Case: Cleanup Triad — Node 26 Unification, Zod v4 Migration, Member Events
+
 **Status**: APPROVED
 **Date**: 2026-07-04
 
@@ -19,41 +20,53 @@ Three independent phases, ordered logically (de-risking first):
 ### Files to Modify (11 files)
 
 #### 1. `Dockerfile.bot`
+
 - **Line 1**: `FROM node:20-alpine AS builder` → `FROM node:26-alpine AS builder`
 - **Line 13**: `FROM node:20-alpine AS runner` → `FROM node:26-alpine AS runner`
 
 #### 2. `Dockerfile.dashboard`
+
 - **Line 1**: `FROM node:20-alpine AS builder` → `FROM node:26-alpine AS builder`
 - **Line 14**: `FROM node:20-alpine AS runner` → `FROM node:26-alpine AS runner`
 
 #### 3. `.github/workflows/build.yml`
+
 - **Line 9**: `NODE_VERSION: "20"` → `NODE_VERSION: "26"`
 
 #### 4. `.github/workflows/test.yml`
+
 - **Line 9**: `NODE_VERSION: "20"` → `NODE_VERSION: "26"`
 
 #### 5. `.github/workflows/lint.yml`
+
 - **Line 9**: `NODE_VERSION: "20"` → `NODE_VERSION: "26"`
 
 #### 6. `.github/workflows/typecheck.yml`
+
 - **Line 9**: `NODE_VERSION: "20"` → `NODE_VERSION: "26"`
 
 #### 7. `.github/workflows/release.yml`
+
 - **Line 21**: `node-version: "20"` → `node-version: "26"`
 
 #### 8. `.github/workflows/lighthouse.yml`
+
 - **Line 15**: `node-version: "20"` → `node-version: "26"`
 
 #### 9. `.gitlab-ci.yml`
+
 - **Line 1**: `image: node:20` → `image: node:26`
 
 #### 10. `README.md`
+
 - **Line 14**: `Node.js 18+` → `Node.js 26+`
 
 #### 11. `packages/dashboard/package.json`
+
 - **Line 34**: `"@types/node": "^20.0.0"` → `"@types/node": "^26.0.0"`
 
 ### No Changes Needed
+
 - `.nvmrc` — already `v26.4.0` ✓
 - `.github/workflows/docker.yml` — no Node version set, uses Dockerfiles (updated above) ✓
 - `.github/workflows/codeql.yml` — CodeQL manages its own runtime ✓
@@ -63,6 +76,7 @@ Three independent phases, ordered logically (de-risking first):
 - `packages/shared/tsconfig.json`, `packages/bot/tsconfig.json`, `tsconfig.base.json` — `target: ES2022` already, no change needed ✓
 
 ### Step-by-Step
+
 1. Edit `Dockerfile.bot` — 2 replacements (builder + runner images)
 2. Edit `Dockerfile.dashboard` — 2 replacements (builder + runner images)
 3. Edit 6 GitHub workflow files — change `"20"` → `"26"`
@@ -72,6 +86,7 @@ Three independent phases, ordered logically (de-risking first):
 7. Run `npm install` to update lockfile and `@types/node`
 
 ### Verification
+
 - `node --version` should show `v26.x`
 - `npm run build` succeeds across all packages
 - `npm test` passes
@@ -84,23 +99,28 @@ Three independent phases, ordered logically (de-risking first):
 ### Files to Modify (3 files)
 
 #### 1. `packages/shared/package.json`
+
 - **Line 11**: `"@ts-rest/core": "^3.52.1"` → `"@ts-rest/core": "3.53.0-rc.1"` (pinned exact)
 - **Line 12**: `"zod": "^3.25.76"` → `"zod": "^4.4.3"`
 
 #### 2. `packages/dashboard/package.json`
+
 - **Line 17**: `"@ts-rest/core": "^3.52.1"` → `"@ts-rest/core": "3.53.0-rc.1"` (pinned exact)
 - **Line 18**: `"@ts-rest/express": "^3.52.1"` → `"@ts-rest/express": "3.53.0-rc.1"` (pinned exact)
 - **Line 26**: `"zod": "^3.25.76"` → `"zod": "^4.4.3"`
 
 #### 3. `packages/shared/src/index.ts`
+
 - **Line 110**: `.default('0')` → `.default(0)` — Zod v4 `.default()` short-circuits, so default must be the final type (number), not a string
 - **Line 111**: `.default('20')` → `.default(20)` — same reason
 - **Line 117**: `z.ZodTypeAny` → `z.ZodType` — `ZodTypeAny` was removed in v4, `ZodType` is the base type
 
 ### Dependencies
+
 - After editing package.json files: run `npm install` to update lockfile
 
 ### Step-by-Step
+
 1. Edit `packages/shared/package.json` — bump zod and @ts-rest/core
 2. Edit `packages/dashboard/package.json` — bump zod, @ts-rest/core, @ts-rest/express
 3. Edit `packages/shared/src/index.ts` — 3 code changes listed above
@@ -110,11 +130,13 @@ Three independent phases, ordered logically (de-risking first):
 7. Run `npm test` — confirms runtime behavior
 
 ### Test Plan
+
 - Existing tests in `packages/bot`, `packages/dashboard`, `packages/shared` must all pass
 - Zod v4 may produce different error messages; no test asserts on Zod error strings currently, but verify none break
 - Pay special attention to `packages/shared/src/index.ts` contract types — the PaginatedResponseSchema generic uses `z.ZodType` now
 
 ### Accepted Risks
+
 - **@ts-rest 3.53.0-rc.1**: Release candidate, pinned exact. If the RC is yanked or has a blocking bug, fall back to keeping Zod v3 on `shared` and `dashboard` packages (bot already on v4). The bot's own usage is fine since it only uses Zod for runtime parsing, not ts-rest contracts.
 
 ---
@@ -124,6 +146,7 @@ Three independent phases, ordered logically (de-risking first):
 ### Files to Delete (1 file)
 
 #### 1. `packages/bot/src/events/member/memberEvents.ts`
+
 - Contains `handleGuildMemberAdd` and `handleGuildMemberRemove` as named exports
 - **Not imported anywhere** in the codebase (confirmed by grep)
 - The event loader (`events/index.ts`) skips it because it `import`s `eventModule.default` — this file has no default export, so it produces a console warning and is skipped at runtime
@@ -132,6 +155,7 @@ Three independent phases, ordered logically (de-risking first):
 ### Files to Create (1 file)
 
 #### 2. `packages/bot/src/services/serverSettingsCache.ts`
+
 New in-memory cache with TTL for `ServerSettings` lookups:
 
 ```ts
@@ -146,7 +170,9 @@ interface CacheEntry {
 const cache = new Map<string, CacheEntry>();
 const TTL_MS = 60_000; // 1 minute
 
-export async function getServerSettings(guildId: string): Promise<ServerSettings | null> {
+export async function getServerSettings(
+  guildId: string
+): Promise<ServerSettings | null> {
   const entry = cache.get(guildId);
   if (entry && entry.expiry > Date.now()) {
     return entry.data;
@@ -172,6 +198,7 @@ export function _resetCache(): void {
 ### Files to Modify (2 files)
 
 #### 3. `packages/bot/src/events/member/guildMemberAdd.ts`
+
 - **Line 4**: Remove `import { prisma } from '../../database/client';` (no longer needed if caching is the only DB call; but keep if other DB calls exist — check: it only uses prisma for serverSettings.findUnique. Remove it.)
   - Actually, `prisma` import is only used on line 10 for `prisma.serverSettings.findUnique`. Replace that call with `getServerSettings`.
   - So: Remove `import { prisma } from '../../database/client';`
@@ -189,6 +216,7 @@ export function _resetCache(): void {
 - **Line 19**: `member.user.tag` → `member.user.username` — `tag` is deprecated in discord.js v14; returns `username` + discriminator, but Discord has migrated to unique usernames. Use `username` directly.
 
 Final file should look like:
+
 ```ts
 import { GuildMember, TextChannel } from 'discord.js';
 import { AuditActions } from '@astra/shared';
@@ -223,12 +251,14 @@ export default guildMemberAddEvent;
 ```
 
 #### 4. `packages/bot/src/events/member/guildMemberRemove.ts`
+
 - **Line 4**: Remove `import { prisma } from '../../database/client';`
 - Add `import { getServerSettings } from '../../services/serverSettingsCache';`
 - **Lines 10-12**: Replace `prisma.serverSettings.findUnique` with `getServerSettings(member.guild.id)`
 - **Line 20**: `member.user?.tag` → `member.user?.username`
 
 Final file should look like:
+
 ```ts
 import { GuildMember, PartialGuildMember, TextChannel } from 'discord.js';
 import { AuditActions } from '@astra/shared';
@@ -270,7 +300,11 @@ export default guildMemberRemoveEvent;
 
 ```ts
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { _resetCache, getServerSettings, invalidateServerSettings } from './serverSettingsCache';
+import {
+  _resetCache,
+  getServerSettings,
+  invalidateServerSettings,
+} from './serverSettingsCache';
 
 const mockFindUnique = vi.fn();
 
@@ -311,7 +345,9 @@ describe('serverSettingsCache', () => {
   it('refetches after invalidation', async () => {
     const oldSettings = { guildId: 'guild-1', welcomeChannelId: 'ch-1' };
     const newSettings = { guildId: 'guild-1', welcomeChannelId: 'ch-2' };
-    mockFindUnique.mockResolvedValueOnce(oldSettings).mockResolvedValueOnce(newSettings);
+    mockFindUnique
+      .mockResolvedValueOnce(oldSettings)
+      .mockResolvedValueOnce(newSettings);
 
     await getServerSettings('guild-1');
     invalidateServerSettings('guild-1');
@@ -340,10 +376,12 @@ describe('serverSettingsCache', () => {
 ```
 
 #### No existing tests need modification
+
 - `guildMemberAdd.ts` and `guildMemberRemove.ts` have no existing test files
 - The `auditLog.test.ts` mocks `prisma.serverSettings.findUnique` directly; it does not use the cache, so it continues to work unchanged
 
 ### Step-by-Step
+
 1. Create `packages/bot/src/services/serverSettingsCache.ts`
 2. Create `packages/bot/src/services/serverSettingsCache.test.ts`
 3. Delete `packages/bot/src/events/member/memberEvents.ts`
@@ -354,6 +392,7 @@ describe('serverSettingsCache', () => {
 8. Run `npm run typecheck` — verify no type errors
 
 ### Data Flow (Caching)
+
 ```
 guildMemberAdd / guildMemberRemove
   → getServerSettings(guildId)
@@ -368,17 +407,18 @@ guildMemberAdd / guildMemberRemove
 
 ## Accepted Risks
 
-| Risk | Mitigation |
-|---|---|
-| **@ts-rest 3.53.0-rc.1** may have bugs or be yanked | Pinned exact version; if blocking, revert Zod v3 on shared+dashboard |
-| **Node 26-alpine Docker image** may not exist in CI | Use `node:26-slim` as fallback; July 2026 should have stable `node:26-alpine` |
-| **Cache staleness**: ServerSettings updated in another process | 1-minute TTL bounds staleness; `invalidateServerSettings()` exported for write paths to call later |
-| **Cache memory growth**: unbounded Map | In practice, a bot serves a bounded number of guilds (<10K); not a concern. Add LRU eviction if needed later |
-| **`.tag` deprecation**: removing `discriminator` info from welcome messages | Discord has fully migrated to unique usernames; `username` alone is the correct modern field |
+| Risk                                                                        | Mitigation                                                                                                   |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **@ts-rest 3.53.0-rc.1** may have bugs or be yanked                         | Pinned exact version; if blocking, revert Zod v3 on shared+dashboard                                         |
+| **Node 26-alpine Docker image** may not exist in CI                         | Use `node:26-slim` as fallback; July 2026 should have stable `node:26-alpine`                                |
+| **Cache staleness**: ServerSettings updated in another process              | 1-minute TTL bounds staleness; `invalidateServerSettings()` exported for write paths to call later           |
+| **Cache memory growth**: unbounded Map                                      | In practice, a bot serves a bounded number of guilds (<10K); not a concern. Add LRU eviction if needed later |
+| **`.tag` deprecation**: removing `discriminator` info from welcome messages | Discord has fully migrated to unique usernames; `username` alone is the correct modern field                 |
 
 ---
 
 # Case: Data Loom — Sortable, Filterable, Exportable Data Tables
+
 **Status**: APPROVED
 **Date**: 2026-07-05
 
@@ -418,6 +458,7 @@ interface UseTableStateReturn extends TableState {
 ```
 
 Logic:
+
 - Wraps `useSearchParams` as single source of truth for URL state
 - `setSortBy(field)`: if same field clicked, toggle order (asc→desc→asc); if different field, set asc
 - `setPage(n)`: updates page param; resets to 1 automatically when sort/search/filter changes
@@ -471,10 +512,15 @@ Renders: horizontal row of filter chips (pill badges with "×" remove button) + 
 #### 5. `packages/shared/src/index.ts`
 
 **PaginationQuerySchema** (lines 109-113): Add fields:
+
 ```ts
 export const PaginationQuerySchema = z.object({
   skip: z.string().transform(Number).pipe(z.number().int().min(0)).default(0),
-  take: z.string().transform(Number).pipe(z.number().int().min(1).max(100)).default(20),
+  take: z
+    .string()
+    .transform(Number)
+    .pipe(z.number().int().min(1).max(100))
+    .default(20),
   q: z.string().optional(),
   sortBy: z.string().optional(),
   sortOrder: z.enum(['asc', 'desc']).optional().default('asc'),
@@ -485,6 +531,7 @@ export const PaginationQuerySchema = z.object({
 ```
 
 **getServers contract** (line 144-151): Add query schema:
+
 ```ts
 getServers: {
   method: 'GET',
@@ -503,51 +550,115 @@ getServers: {
 #### 6. `packages/dashboard/src/api/app.ts`
 
 **getServers handler** (line 92): Destructure query params but ignore them (client-side sort):
+
 ```ts
 getServers: async ({ query: { sortBy, sortOrder } }) => { ... }
 ```
 
 **getUsers handler** (line 114):
+
 ```ts
 const { skip, take, q, sortBy, sortOrder } = query;
-const SORTABLE_USER_FIELDS = ['id', 'guildId', 'xp', 'level', 'username', 'displayName'];
-const orderBy = sortBy && SORTABLE_USER_FIELDS.includes(sortBy)
-  ? { [sortBy]: sortOrder ?? 'asc' }
-  : { xp: 'desc' };
+const SORTABLE_USER_FIELDS = [
+  'id',
+  'guildId',
+  'xp',
+  'level',
+  'username',
+  'displayName',
+];
+const orderBy =
+  sortBy && SORTABLE_USER_FIELDS.includes(sortBy)
+    ? { [sortBy]: sortOrder ?? 'asc' }
+    : { xp: 'desc' };
 ```
+
 Pass `orderBy` to `prisma.user.findMany({ ..., orderBy })`.
 
 **getWarnings handler** (line 150):
+
 ```ts
 const { skip, take, q, sortBy, sortOrder, startDate, endDate } = query;
-const SORTABLE_WARNING_FIELDS = ['id', 'userId', 'guildId', 'reason', 'createdAt'];
-const orderBy = sortBy && SORTABLE_WARNING_FIELDS.includes(sortBy)
-  ? { [sortBy]: sortOrder ?? 'asc' }
-  : { createdAt: 'desc' };
+const SORTABLE_WARNING_FIELDS = [
+  'id',
+  'userId',
+  'guildId',
+  'reason',
+  'createdAt',
+];
+const orderBy =
+  sortBy && SORTABLE_WARNING_FIELDS.includes(sortBy)
+    ? { [sortBy]: sortOrder ?? 'asc' }
+    : { createdAt: 'desc' };
 const where = {
-  ...(q ? { OR: [{ userId: { contains: q } }, { reason: { contains: q } }, { guildId: { contains: q } }] } : {}),
-  ...(startDate || endDate ? { createdAt: { ...(startDate ? { gte: new Date(startDate) } : {}), ...(endDate ? { lte: new Date(endDate) } : {}) } } : {}),
+  ...(q
+    ? {
+        OR: [
+          { userId: { contains: q } },
+          { reason: { contains: q } },
+          { guildId: { contains: q } },
+        ],
+      }
+    : {}),
+  ...(startDate || endDate
+    ? {
+        createdAt: {
+          ...(startDate ? { gte: new Date(startDate) } : {}),
+          ...(endDate ? { lte: new Date(endDate) } : {}),
+        },
+      }
+    : {}),
 };
 ```
+
 Pass `orderBy` and `where` to `prisma.warning.findMany({ ..., orderBy, where })`.
 
 **getAuditLog handler** (line 188):
+
 ```ts
 const { skip, take, q, sortBy, sortOrder, startDate, endDate, action } = query;
-const SORTABLE_AUDIT_FIELDS = ['id', 'guildId', 'action', 'targetId', 'targetName', 'moderatorId', 'moderatorName', 'reason', 'createdAt'];
-const orderBy = sortBy && SORTABLE_AUDIT_FIELDS.includes(sortBy)
-  ? { [sortBy]: sortOrder ?? 'asc' }
-  : { createdAt: 'desc' };
+const SORTABLE_AUDIT_FIELDS = [
+  'id',
+  'guildId',
+  'action',
+  'targetId',
+  'targetName',
+  'moderatorId',
+  'moderatorName',
+  'reason',
+  'createdAt',
+];
+const orderBy =
+  sortBy && SORTABLE_AUDIT_FIELDS.includes(sortBy)
+    ? { [sortBy]: sortOrder ?? 'asc' }
+    : { createdAt: 'desc' };
 const where = {
-  ...(q ? { OR: [{ targetId: { contains: q } }, { action: { contains: q } }, { guildId: { contains: q } }, { reason: { contains: q } }] } : {}),
+  ...(q
+    ? {
+        OR: [
+          { targetId: { contains: q } },
+          { action: { contains: q } },
+          { guildId: { contains: q } },
+          { reason: { contains: q } },
+        ],
+      }
+    : {}),
   ...(action ? { action } : {}),
-  ...(startDate || endDate ? { createdAt: { ...(startDate ? { gte: new Date(startDate) } : {}), ...(endDate ? { lte: new Date(endDate) } : {}) } } : {}),
+  ...(startDate || endDate
+    ? {
+        createdAt: {
+          ...(startDate ? { gte: new Date(startDate) } : {}),
+          ...(endDate ? { lte: new Date(endDate) } : {}),
+        },
+      }
+    : {}),
 };
 ```
 
 Invalid sortBy: silently ignored, use default sort. Invalid sortOrder: default to 'asc'.
 
 #### 7. `packages/dashboard/src/web/src/pages/Servers.tsx`
+
 - Import `useTableState` hook
 - Replace `useState` for loading/servers — keep `useState` for loading and data only; sort/filter state from hook
 - Add `<SortableHeader>` on all columns (Server, Guild ID, Members, Warnings, Link Block, Blocked Words, Timeout At, Ban At, Level Roles)
@@ -559,6 +670,7 @@ Invalid sortBy: silently ignored, use default sort. Invalid sortOrder: default t
 - No pagination (all data loaded)
 
 #### 8. `packages/dashboard/src/web/src/pages/Users.tsx`
+
 - Replace `useState` for page/search with `useTableState`
 - Add `<SortableHeader>` on: User, User ID, Guild ID, Level, XP, Warnings
 - Pass `sortBy`, `sortOrder` to API call: `client.getUsers({ query: { skip, take, q, sortBy, sortOrder } })`
@@ -568,6 +680,7 @@ Invalid sortBy: silently ignored, use default sort. Invalid sortOrder: default t
 - URL params: `page`, `sortBy`, `sortOrder`, `q`
 
 #### 9. `packages/dashboard/src/web/src/pages/Warnings.tsx`
+
 - Replace `useState` for page/search with `useTableState`
 - Add `<SortableHeader>` on: ID, User, User ID, Guild ID, Reason, User Level, User XP, Date
 - Pass `sortBy`, `sortOrder`, `startDate`, `endDate` to API call
@@ -576,6 +689,7 @@ Invalid sortBy: silently ignored, use default sort. Invalid sortOrder: default t
 - URL params: `page`, `sortBy`, `sortOrder`, `q`, `startDate`, `endDate`
 
 #### 10. `packages/dashboard/src/web/src/pages/AuditLog.tsx`
+
 - Replace `useState` for page/search with `useTableState`
 - Add `<SortableHeader>` on: ID, Guild ID, Action, Target, Moderator, Reason, Date
 - Pass `sortBy`, `sortOrder`, `startDate`, `endDate`, `action` to API call
@@ -585,18 +699,29 @@ Invalid sortBy: silently ignored, use default sort. Invalid sortOrder: default t
 - URL params: `page`, `sortBy`, `sortOrder`, `q`, `startDate`, `endDate`, `action`
 
 #### 11. `packages/dashboard/src/web/src/pages/Dashboard.tsx`
+
 - **No changes.** Recent Warnings mini-table has only 5 rows; sorting adds no value.
 
 #### 12. `packages/dashboard/src/web/src/styles/index.scss`
+
 Add classes (append before end of file):
+
 ```scss
 .sort-header {
   cursor: pointer;
   user-select: none;
-  &:hover { color: var(--text-primary); }
+  &:hover {
+    color: var(--text-primary);
+  }
 }
-.sort-asc::after { content: ' ▲'; font-size: 10px; }
-.sort-desc::after { content: ' ▼'; font-size: 10px; }
+.sort-asc::after {
+  content: ' ▲';
+  font-size: 10px;
+}
+.sort-desc::after {
+  content: ' ▼';
+  font-size: 10px;
+}
 
 .filter-bar {
   display: flex;
@@ -619,13 +744,17 @@ Add classes (append before end of file):
 .filter-chip-remove {
   cursor: pointer;
   opacity: 0.6;
-  &:hover { opacity: 1; }
+  &:hover {
+    opacity: 1;
+  }
 }
 .filter-clear-all {
   font-size: 12px;
   color: var(--text-muted);
   cursor: pointer;
-  &:hover { color: var(--text-primary); }
+  &:hover {
+    color: var(--text-primary);
+  }
 }
 
 .export-btn {
@@ -638,7 +767,7 @@ Add classes (append before end of file):
   cursor: pointer;
   transition: all 0.15s ease;
   &:hover {
-    background: rgba(255,255,255,0.06);
+    background: rgba(255, 255, 255, 0.06);
     color: var(--text-primary);
   }
 }
@@ -651,7 +780,9 @@ Add classes (append before end of file):
   color: var(--text-primary);
   font-size: 12px;
   outline: none;
-  &:focus { border-color: var(--accent); }
+  &:focus {
+    border-color: var(--accent);
+  }
 }
 
 .toolbar {
@@ -664,7 +795,9 @@ Add classes (append before end of file):
 ```
 
 #### 13. `packages/dashboard/src/api/__tests__/routes.test.ts`
+
 Add test cases:
+
 - `GET /api/users?sortBy=xp&sortOrder=desc` returns 200 with items sorted by XP descending (verify prisma.findMany called with `orderBy: { xp: 'desc' }`)
 - `GET /api/warnings?sortBy=createdAt&sortOrder=asc` returns 200
 - `GET /api/audit-log?sortBy=action&sortOrder=asc&action=ban` returns 200
@@ -703,12 +836,12 @@ Add test cases:
 
 ### Test Plan
 
-| Test | File | Cases |
-|---|---|---|
-| Route sort tests | `packages/dashboard/src/api/__tests__/routes.test.ts` | 7 new cases (see above) |
-| SortableHeader | New: `.../components/SortableHeader.test.tsx` | Renders label, shows arrow when active, calls onSort on click, toggles direction |
-| ExportButton | New: `.../components/ExportButton.test.tsx` | Renders button, generates CSV blob, downloads with correct filename |
-| FilterBar | New: `.../components/FilterBar.test.tsx` | Renders filter chips, remove calls onRemoveFilter, Clear All calls onClearAll, renders children |
+| Test             | File                                                  | Cases                                                                                           |
+| ---------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Route sort tests | `packages/dashboard/src/api/__tests__/routes.test.ts` | 7 new cases (see above)                                                                         |
+| SortableHeader   | New: `.../components/SortableHeader.test.tsx`         | Renders label, shows arrow when active, calls onSort on click, toggles direction                |
+| ExportButton     | New: `.../components/ExportButton.test.tsx`           | Renders button, generates CSV blob, downloads with correct filename                             |
+| FilterBar        | New: `.../components/FilterBar.test.tsx`              | Renders filter chips, remove calls onRemoveFilter, Clear All calls onClearAll, renders children |
 
 ---
 
@@ -733,13 +866,13 @@ User interacts (click sort header / type search / pick date / select action)
 
 ### Accepted Risks
 
-| Risk | Mitigation |
-|---|---|
-| **useSearchParams paradigm shift** — all 4 list pages migrate from `useState` to URL-based state. If a future developer is unfamiliar with the pattern, they may misuse it. | Convention documented in the hook interface; all 4 pages follow the same pattern. URL-based state is the standard React Router pattern for bookmarkable views. |
-| **Client-side sort on Servers** — sorting 100+ rows in browser is fast, but if server count grows to 10K+, client-side sort becomes slow. | Acceptable for current scale. Can be moved server-side later by adding `sortBy`/`sortOrder` to the `getServers` Prisma query (schema already has `name`, `guildId` columns available). |
-| **Client-side filter on Servers** — same scaling concern as above. | Same mitigation: move to server-side query when needed. |
-| **Invalid sortBy silently ignored** — user passes a bogus field name, falls back to default sort. No error feedback. | Acceptable UX trade-off; the URL is user-writable anyway. Invalid params produce valid results (just not sorted as expected). |
-| **Debounce on search only** — filter dropdown changes and date picker changes apply immediately, which could cause rapid API calls. | Filter dropdowns have few options, date pickers require explicit selection. 300ms debounce on search is the critical one. |
+| Risk                                                                                                                                                                        | Mitigation                                                                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **useSearchParams paradigm shift** — all 4 list pages migrate from `useState` to URL-based state. If a future developer is unfamiliar with the pattern, they may misuse it. | Convention documented in the hook interface; all 4 pages follow the same pattern. URL-based state is the standard React Router pattern for bookmarkable views.                         |
+| **Client-side sort on Servers** — sorting 100+ rows in browser is fast, but if server count grows to 10K+, client-side sort becomes slow.                                   | Acceptable for current scale. Can be moved server-side later by adding `sortBy`/`sortOrder` to the `getServers` Prisma query (schema already has `name`, `guildId` columns available). |
+| **Client-side filter on Servers** — same scaling concern as above.                                                                                                          | Same mitigation: move to server-side query when needed.                                                                                                                                |
+| **Invalid sortBy silently ignored** — user passes a bogus field name, falls back to default sort. No error feedback.                                                        | Acceptable UX trade-off; the URL is user-writable anyway. Invalid params produce valid results (just not sorted as expected).                                                          |
+| **Debounce on search only** — filter dropdown changes and date picker changes apply immediately, which could cause rapid API calls.                                         | Filter dropdowns have few options, date pickers require explicit selection. 300ms debounce on search is the critical one.                                                              |
 
 ---
 
@@ -748,6 +881,7 @@ User interacts (click sort header / type search / pick date / select action)
 **Original Request**: Developer needs sortable, filterable, exportable data tables across all 4 dashboard list pages (Servers, Users, Warnings, AuditLog) for debugging/monitoring.
 
 **Key Decisions**:
+
 - URL-based state via `useSearchParams` as single source of truth (bookmarkable, shareable)
 - Servers: all client-side sorting/filtering (no pagination, all data loaded)
 - Users/Warnings/AuditLog: server-side sorting via Prisma `orderBy`

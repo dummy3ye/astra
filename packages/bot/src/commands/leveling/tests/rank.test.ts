@@ -64,7 +64,7 @@ describe('rankCommand', () => {
     mockFindUnique.mockResolvedValue(null);
 
     const reply = vi.fn();
-const interaction = {
+    const interaction = {
       guildId: 'guild-abc',
       user: { id: 'user-123', username: 'caller' },
       options: {

@@ -47,6 +47,7 @@ Implement changes carefully:
 3. If you discover something unexpected while editing, pause and flag it before continuing
 
 **Rules**:
+
 - No silent 5-file batch edits
 - No rm, rmdir, push --force, chmod -R, chown -R, kill -9, dd, mkfs — these are denied
 - Ask before: commit, push, npm install, mv, cp -r, git reset, git revert, gh pr merge/publish
@@ -64,6 +65,7 @@ After all changes are applied:
 ## When To Use This
 
 Use this workflow when:
+
 - The user says "summon the coder" or "let the coder handle this"
 - The task involves destructive or risky operations
 - The user wants careful, reviewable changes with confirmation at every step

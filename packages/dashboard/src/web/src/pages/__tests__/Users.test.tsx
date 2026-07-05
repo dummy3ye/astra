@@ -23,7 +23,7 @@ describe('Users page', () => {
     render(
       <MemoryRouter>
         <Users />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
     expect(screen.getByText('Users')).toBeInTheDocument();
   });
@@ -33,7 +33,15 @@ describe('Users page', () => {
       status: 200,
       body: {
         items: [
-          { id: 'u1', guildId: 'g1', xp: 1500, level: 5, warnings: 2, username: 'user1', displayName: 'User1' },
+          {
+            id: 'u1',
+            guildId: 'g1',
+            xp: 1500,
+            level: 5,
+            warnings: 2,
+            username: 'user1',
+            displayName: 'User1',
+          },
         ],
         total: 1,
       },
@@ -42,7 +50,7 @@ describe('Users page', () => {
     render(
       <MemoryRouter>
         <Users />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(await screen.findByText('Users')).toBeInTheDocument();
@@ -53,12 +61,15 @@ describe('Users page', () => {
   });
 
   it('shows empty state when no users', async () => {
-    mockGetUsers.mockResolvedValue({ status: 200, body: { items: [], total: 0 } });
+    mockGetUsers.mockResolvedValue({
+      status: 200,
+      body: { items: [], total: 0 },
+    });
 
     render(
       <MemoryRouter>
         <Users />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(await screen.findByText('No users found.')).toBeInTheDocument();

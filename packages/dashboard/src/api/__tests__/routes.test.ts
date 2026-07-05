@@ -7,14 +7,22 @@ function mockPrisma(): PrismaClient {
   return {
     user: {
       count: vi.fn().mockResolvedValue(42),
-      findMany: vi.fn().mockResolvedValue([
-        { id: 'u1', guildId: 'g1', xp: 1500, level: 5, warnings: [] },
-      ]),
+      findMany: vi
+        .fn()
+        .mockResolvedValue([
+          { id: 'u1', guildId: 'g1', xp: 1500, level: 5, warnings: [] },
+        ]),
     },
     serverSettings: {
       count: vi.fn().mockResolvedValue(3),
       findMany: vi.fn().mockResolvedValue([
-        { guildId: 'g1', blockLinks: true, blockedWords: 'bad', warnTimeoutThreshold: 3, warnBanThreshold: 5 },
+        {
+          guildId: 'g1',
+          blockLinks: true,
+          blockedWords: 'bad',
+          warnTimeoutThreshold: 3,
+          warnBanThreshold: 5,
+        },
       ]),
     },
     warning: {
@@ -42,7 +50,7 @@ describe('API routes', () => {
     const res = await request(app).get('/api/users?sortBy=xp&sortOrder=desc');
     expect(res.status).toBe(200);
     expect(prisma.user.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ orderBy: { xp: 'desc' } }),
+      expect.objectContaining({ orderBy: { xp: 'desc' } })
     );
   });
 
@@ -52,15 +60,19 @@ describe('API routes', () => {
     const res = await request(app).get('/api/users?sortBy=invalidField');
     expect(res.status).toBe(200);
     expect(prisma.user.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ orderBy: { xp: 'desc' } }),
+      expect.objectContaining({ orderBy: { xp: 'desc' } })
     );
   });
 
   it('GET /api/warnings?startDate=2026-01-01&endDate=2026-06-30 filters by date range', async () => {
     const prisma = mockPrisma();
-    (prisma.warning.findMany as unknown as ReturnType<typeof vi.fn>).mockResolvedValue([]);
+    (
+      prisma.warning.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockResolvedValue([]);
     const app = createApp({ prisma });
-    const res = await request(app).get('/api/warnings?startDate=2026-01-01&endDate=2026-06-30');
+    const res = await request(app).get(
+      '/api/warnings?startDate=2026-01-01&endDate=2026-06-30'
+    );
     expect(res.status).toBe(200);
     expect(prisma.warning.findMany).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -70,24 +82,30 @@ describe('API routes', () => {
             lte: expect.any(Date),
           }),
         }),
-      }),
+      })
     );
   });
 
   it('GET /api/audit-log?action=ban filters by action', async () => {
     const prisma = mockPrisma();
-    (prisma.auditLog.findMany as unknown as ReturnType<typeof vi.fn>).mockResolvedValue([]);
+    (
+      prisma.auditLog.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockResolvedValue([]);
     const app = createApp({ prisma });
     const res = await request(app).get('/api/audit-log?action=ban');
     expect(res.status).toBe(200);
     expect(prisma.auditLog.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ where: expect.objectContaining({ action: 'ban' }) }),
+      expect.objectContaining({
+        where: expect.objectContaining({ action: 'ban' }),
+      })
     );
   });
 
   it('GET /api/servers?sortBy=name&sortOrder=asc accepts sort params', async () => {
     const app = createApp({ prisma: mockPrisma() });
-    const res = await request(app).get('/api/servers?sortBy=name&sortOrder=asc');
+    const res = await request(app).get(
+      '/api/servers?sortBy=name&sortOrder=asc'
+    );
     expect(res.status).toBe(200);
   });
   it('GET /api/stats returns 200 with stats shape', async () => {
@@ -107,7 +125,9 @@ describe('API routes', () => {
 
   it('GET /api/stats returns 500 on error', async () => {
     const prisma = mockPrisma();
-    (prisma.user.count as unknown as ReturnType<typeof vi.fn>).mockRejectedValue(new Error('db error'));
+    (
+      prisma.user.count as unknown as ReturnType<typeof vi.fn>
+    ).mockRejectedValue(new Error('db error'));
     const app = createApp({ prisma });
     const res = await request(app).get('/api/stats');
     expect(res.status).toBe(500);
@@ -127,7 +147,9 @@ describe('API routes', () => {
 
   it('GET /api/servers returns 500 on error', async () => {
     const prisma = mockPrisma();
-    (prisma.serverSettings.findMany as unknown as ReturnType<typeof vi.fn>).mockRejectedValue(new Error('db error'));
+    (
+      prisma.serverSettings.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockRejectedValue(new Error('db error'));
     const app = createApp({ prisma });
     const res = await request(app).get('/api/servers');
     expect(res.status).toBe(500);
@@ -148,7 +170,9 @@ describe('API routes', () => {
 
   it('GET /api/users returns 500 on error', async () => {
     const prisma = mockPrisma();
-    (prisma.user.findMany as unknown as ReturnType<typeof vi.fn>).mockRejectedValue(new Error('db error'));
+    (
+      prisma.user.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockRejectedValue(new Error('db error'));
     const app = createApp({ prisma });
     const res = await request(app).get('/api/users');
     expect(res.status).toBe(500);
@@ -157,9 +181,14 @@ describe('API routes', () => {
 
   it('GET /api/warnings returns 200 with paginated warning list', async () => {
     const prisma = mockPrisma();
-    (prisma.warning.findMany as unknown as ReturnType<typeof vi.fn>).mockResolvedValue([
+    (
+      prisma.warning.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockResolvedValue([
       {
-        id: 1, userId: 'u1', guildId: 'g1', reason: 'spam',
+        id: 1,
+        userId: 'u1',
+        guildId: 'g1',
+        reason: 'spam',
         createdAt: new Date(),
         user: { level: 3, xp: 800 },
       },
@@ -176,7 +205,9 @@ describe('API routes', () => {
 
   it('GET /api/warnings returns 500 on error', async () => {
     const prisma = mockPrisma();
-    (prisma.warning.findMany as unknown as ReturnType<typeof vi.fn>).mockRejectedValue(new Error('db error'));
+    (
+      prisma.warning.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockRejectedValue(new Error('db error'));
     const app = createApp({ prisma });
     const res = await request(app).get('/api/warnings');
     expect(res.status).toBe(500);
@@ -185,10 +216,16 @@ describe('API routes', () => {
 
   it('GET /api/audit-log returns 200 with paginated audit entries', async () => {
     const prisma = mockPrisma();
-    (prisma.auditLog.findMany as unknown as ReturnType<typeof vi.fn>).mockResolvedValue([
+    (
+      prisma.auditLog.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockResolvedValue([
       {
-        id: 1, guildId: 'g1', action: 'ban', targetId: 'u1',
-        reason: 'violation', createdAt: new Date(),
+        id: 1,
+        guildId: 'g1',
+        action: 'ban',
+        targetId: 'u1',
+        reason: 'violation',
+        createdAt: new Date(),
       },
     ]);
     const app = createApp({ prisma });
@@ -203,7 +240,9 @@ describe('API routes', () => {
 
   it('GET /api/audit-log returns 500 on error', async () => {
     const prisma = mockPrisma();
-    (prisma.auditLog.findMany as unknown as ReturnType<typeof vi.fn>).mockRejectedValue(new Error('db error'));
+    (
+      prisma.auditLog.findMany as unknown as ReturnType<typeof vi.fn>
+    ).mockRejectedValue(new Error('db error'));
     const app = createApp({ prisma });
     const res = await request(app).get('/api/audit-log');
     expect(res.status).toBe(500);

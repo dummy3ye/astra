@@ -24,14 +24,32 @@ export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const { sortBy, sortOrder, page, search, filters, setSortBy, setPage, setSearch, removeFilter, clearFilters } =
-    useTableState({ defaultSortBy: 'xp', defaultSortOrder: 'desc' });
+  const {
+    sortBy,
+    sortOrder,
+    page,
+    search,
+    filters,
+    setSortBy,
+    setPage,
+    setSearch,
+    removeFilter,
+    clearFilters,
+  } = useTableState({ defaultSortBy: 'xp', defaultSortOrder: 'desc' });
 
   useEffect(() => {
     setLoading(true);
     const skip = String((page - 1) * PAGE_SIZE);
     client
-      .getUsers({ query: { skip, take: String(PAGE_SIZE), q: search || undefined, sortBy: sortBy ?? undefined, sortOrder } })
+      .getUsers({
+        query: {
+          skip,
+          take: String(PAGE_SIZE),
+          q: search || undefined,
+          sortBy: sortBy ?? undefined,
+          sortOrder,
+        },
+      })
       .then((res) => {
         if (res.status === 200) {
           setUsers(res.body.items);
@@ -44,7 +62,9 @@ export default function Users() {
 
   const filtered = users.filter((u) => {
     for (const [field, value] of Object.entries(filters)) {
-      const cell = String((u as Record<string, unknown>)[field] ?? '').toLowerCase();
+      const cell = String(
+        (u as Record<string, unknown>)[field] ?? ''
+      ).toLowerCase();
       if (!cell.includes(value.toLowerCase())) return false;
     }
     return true;
@@ -73,7 +93,11 @@ export default function Users() {
           defaultValue={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <ExportButton data={filtered} filename="users.csv" columns={EXPORT_COLUMNS} />
+        <ExportButton
+          data={filtered}
+          filename="users.csv"
+          columns={EXPORT_COLUMNS}
+        />
       </FilterBar>
       {filtered.length === 0 ? (
         <p className="page-empty">No users found.</p>
@@ -82,37 +106,67 @@ export default function Users() {
           <div className="table-wrapper">
             <table className="data-table">
               <thead>
-              <tr>
-                <th>User</th>
-                <SortableHeader field="id" label="User ID" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="guildId" label="Guild ID" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="level" label="Level" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="xp" label="XP" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <th>Warnings</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((u) => (
-                <tr key={`${u.id}-${u.guildId}`}>
-                  <td>
-                    <div className="flex items-center gap-2">
-                      {u.avatar && (
-                        <img
-                          src={`https://cdn.discordapp.com/avatars/${u.id}/${u.avatar}.png`}
-                          alt=""
-                          className="w-6 h-6 rounded-full"
-                        />
-                      )}
-                      <div>
-                        <div className="text-sm leading-tight">{u.displayName || u.username || u.id}</div>
-                        {u.username && u.displayName && (
-                          <div className="text-xs text-muted leading-tight">@{u.username}</div>
+                <tr>
+                  <th>User</th>
+                  <SortableHeader
+                    field="id"
+                    label="User ID"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="guildId"
+                    label="Guild ID"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="level"
+                    label="Level"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="xp"
+                    label="XP"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <th>Warnings</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filtered.map((u) => (
+                  <tr key={`${u.id}-${u.guildId}`}>
+                    <td>
+                      <div className="flex items-center gap-2">
+                        {u.avatar && (
+                          <img
+                            src={`https://cdn.discordapp.com/avatars/${u.id}/${u.avatar}.png`}
+                            alt=""
+                            className="w-6 h-6 rounded-full"
+                          />
                         )}
+                        <div>
+                          <div className="text-sm leading-tight">
+                            {u.displayName || u.username || u.id}
+                          </div>
+                          {u.username && u.displayName && (
+                            <div className="text-xs text-muted leading-tight">
+                              @{u.username}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td className="font-mono text-xs text-muted">{u.id}</td>
-                  <td className="font-mono text-xs text-muted">{u.guildId}</td>
+                    </td>
+                    <td className="font-mono text-xs text-muted">{u.id}</td>
+                    <td className="font-mono text-xs text-muted">
+                      {u.guildId}
+                    </td>
                     <td>{u.level}</td>
                     <td>{u.xp.toLocaleString()}</td>
                     <td>{u.warnings}</td>

@@ -29,6 +29,7 @@ For any request, offer **at least three distinct approaches**:
 3. **The Wild Idea** — Something experimental, risky, or unconventional. May be impractical, but the seed might spark something.
 
 For each approach, wave your hands at:
+
 - **Tools & materials** — what libraries, packages, or built-ins could serve
 - **Shape** — roughly how it would fit into the existing codebase
 - **Sacrifice** — what trade-off this approach makes (speed, simplicity, maintainability)
@@ -40,6 +41,7 @@ For each approach, wave your hands at:
 ## 🧙 The Wizard's Conjurations
 
 ### Approach 1: {Name}
+
 {2-3 sentences painting the picture}
 
 **Tools**: ...
@@ -47,11 +49,14 @@ For each approach, wave your hands at:
 **Delight**: ...
 
 ### Approach 2: {Name}
+
 ...
 
 ### Approach 3: {Name}
+
 ...
 
 ### A Final Whisper
+
 (one wild, optional, probably-unhinged bonus idea)
 ```

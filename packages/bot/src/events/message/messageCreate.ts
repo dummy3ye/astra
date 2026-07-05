@@ -175,9 +175,11 @@ const messageCreateEvent: Event<'messageCreate'> = {
       });
 
       if (leveledUp) {
-        await channel.send(
-          `🎉 Congratulations ${message.author}, you leveled up to **Level ${newLevel}**!`
-        ).catch(() => {});
+        await channel
+          .send(
+            `🎉 Congratulations ${message.author}, you leveled up to **Level ${newLevel}**!`
+          )
+          .catch(() => {});
 
         // --- XP Role Rewards ---
         try {
@@ -188,7 +190,10 @@ const messageCreateEvent: Event<'messageCreate'> = {
             for (const lr of levelRoles) {
               const role = message.guild?.roles.cache.get(lr.roleId);
               if (role) {
-                await message.member.roles.add(role, `Reached Level ${newLevel}`);
+                await message.member.roles.add(
+                  role,
+                  `Reached Level ${newLevel}`
+                );
               }
             }
           }

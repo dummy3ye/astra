@@ -15,16 +15,19 @@ export default function SortableHeader({
 }: SortableHeaderProps) {
   const isActive = currentSortBy === field;
   const arrow =
-    isActive && currentSortOrder === 'asc' ? ' ▲' :
-    isActive && currentSortOrder === 'desc' ? ' ▼' :
-    '';
+    isActive && currentSortOrder === 'asc'
+      ? ' ▲'
+      : isActive && currentSortOrder === 'desc'
+        ? ' ▼'
+        : '';
 
   return (
     <th
       className={`sort-header${isActive ? ` sort-${currentSortOrder}` : ''}`}
       onClick={() => onSort(field)}
     >
-      {label}{arrow}
+      {label}
+      {arrow}
     </th>
   );
 }

@@ -5,7 +5,12 @@ interface Props {
   onPageChange: (page: number) => void;
 }
 
-export default function Pagination({ page, pageSize, total, onPageChange }: Props) {
+export default function Pagination({
+  page,
+  pageSize,
+  total,
+  onPageChange,
+}: Props) {
   const totalPages = Math.ceil(total / pageSize);
   if (totalPages <= 1) return null;
 
@@ -25,7 +30,9 @@ export default function Pagination({ page, pageSize, total, onPageChange }: Prop
       </button>
       {start > 1 && (
         <>
-          <button className="pagination-btn" onClick={() => onPageChange(1)}>1</button>
+          <button className="pagination-btn" onClick={() => onPageChange(1)}>
+            1
+          </button>
           {start > 2 && <span className="pagination-ellipsis">...</span>}
         </>
       )}
@@ -40,8 +47,13 @@ export default function Pagination({ page, pageSize, total, onPageChange }: Prop
       ))}
       {end < totalPages && (
         <>
-          {end < totalPages - 1 && <span className="pagination-ellipsis">...</span>}
-          <button className="pagination-btn" onClick={() => onPageChange(totalPages)}>
+          {end < totalPages - 1 && (
+            <span className="pagination-ellipsis">...</span>
+          )}
+          <button
+            className="pagination-btn"
+            onClick={() => onPageChange(totalPages)}
+          >
             {totalPages}
           </button>
         </>

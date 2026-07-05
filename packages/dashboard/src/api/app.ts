@@ -9,11 +9,16 @@ import { contract } from '@astra/shared';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }) {
+export function createApp(opts?: {
+  databaseUrl?: string;
+  prisma?: PrismaClient;
+}) {
   const app = express();
 
-  const url = opts?.databaseUrl ?? process.env.DATABASE_URL ?? 'file:../bot/dev.db';
-  const prisma = opts?.prisma ?? new PrismaClient({ adapter: new PrismaLibSql({ url }) });
+  const url =
+    opts?.databaseUrl ?? process.env.DATABASE_URL ?? 'file:../bot/dev.db';
+  const prisma =
+    opts?.prisma ?? new PrismaClient({ adapter: new PrismaLibSql({ url }) });
 
   app.use(cors());
   app.use(express.json());
@@ -21,11 +26,38 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
   const dist = path.join(__dirname, '../web');
   app.use(express.static(dist));
 
-  const SORTABLE_USER_FIELDS = ['id', 'guildId', 'xp', 'level', 'username', 'displayName'];
-  const SORTABLE_WARNING_FIELDS = ['id', 'userId', 'guildId', 'reason', 'createdAt'];
-  const SORTABLE_AUDIT_FIELDS = ['id', 'guildId', 'action', 'targetId', 'targetName', 'moderatorId', 'moderatorName', 'reason', 'createdAt'];
+  const SORTABLE_USER_FIELDS = [
+    'id',
+    'guildId',
+    'xp',
+    'level',
+    'username',
+    'displayName',
+  ];
+  const SORTABLE_WARNING_FIELDS = [
+    'id',
+    'userId',
+    'guildId',
+    'reason',
+    'createdAt',
+  ];
+  const SORTABLE_AUDIT_FIELDS = [
+    'id',
+    'guildId',
+    'action',
+    'targetId',
+    'targetName',
+    'moderatorId',
+    'moderatorName',
+    'reason',
+    'createdAt',
+  ];
 
-  function buildOrderBy(sortBy: string | undefined, sortOrder: string | undefined, allowed: string[]) {
+  function buildOrderBy(
+    sortBy: string | undefined,
+    sortOrder: string | undefined,
+    allowed: string[]
+  ) {
     return sortBy && allowed.includes(sortBy)
       ? { [sortBy]: sortOrder === 'desc' ? 'desc' : 'asc' }
       : undefined;
@@ -52,7 +84,11 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
           prisma.serverSettings.count(),
           prisma.warning.count(),
           prisma.auditLog.count({ where: { action: 'ban' } }),
-          prisma.warning.findMany({ take: 5, orderBy: { createdAt: 'desc' }, include: { user: true } }),
+          prisma.warning.findMany({
+            take: 5,
+            orderBy: { createdAt: 'desc' },
+            include: { user: true },
+          }),
           prisma.warning.findMany({
             where: { createdAt: { gte: sevenDaysAgo } },
             select: { createdAt: true },
@@ -96,7 +132,10 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
           },
         };
       } catch {
-        return { status: 500 as const, body: { error: 'Failed to fetch stats' } };
+        return {
+          status: 500 as const,
+          body: { error: 'Failed to fetch stats' },
+        };
       }
     },
     getServers: async () => {
@@ -107,18 +146,27 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
             guildId: s.guildId,
             name: s.name,
             icon: s.icon,
-            memberCount: await prisma.user.count({ where: { guildId: s.guildId } }),
-            warningCount: await prisma.warning.count({ where: { guildId: s.guildId } }),
+            memberCount: await prisma.user.count({
+              where: { guildId: s.guildId },
+            }),
+            warningCount: await prisma.warning.count({
+              where: { guildId: s.guildId },
+            }),
             blockLinks: s.blockLinks,
             blockedWords: s.blockedWords,
             warnTimeoutThreshold: s.warnTimeoutThreshold,
             warnBanThreshold: s.warnBanThreshold,
-            levelRoles: await prisma.levelRole.count({ where: { guildId: s.guildId } }),
-          })),
+            levelRoles: await prisma.levelRole.count({
+              where: { guildId: s.guildId },
+            }),
+          }))
         );
         return { status: 200, body: enriched };
       } catch {
-        return { status: 500 as const, body: { error: 'Failed to fetch servers' } };
+        return {
+          status: 500 as const,
+          body: { error: 'Failed to fetch servers' },
+        };
       }
     },
     getUsers: async ({ query }) => {
@@ -127,7 +175,11 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
         const where = q
           ? { OR: [{ id: { contains: q } }, { guildId: { contains: q } }] }
           : undefined;
-        const orderBy = buildOrderBy(sortBy, sortOrder, SORTABLE_USER_FIELDS) ?? { xp: 'desc' };
+        const orderBy = buildOrderBy(
+          sortBy,
+          sortOrder,
+          SORTABLE_USER_FIELDS
+        ) ?? { xp: 'desc' };
         const [users, total] = await Promise.all([
           prisma.user.findMany({
             where,
@@ -155,7 +207,10 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
           },
         };
       } catch {
-        return { status: 500 as const, body: { error: 'Failed to fetch users' } };
+        return {
+          status: 500 as const,
+          body: { error: 'Failed to fetch users' },
+        };
       }
     },
     getWarnings: async ({ query }) => {
@@ -163,13 +218,28 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
         const { skip, take, q, sortBy, sortOrder, startDate, endDate } = query;
         const where: Record<string, unknown> = {
           ...(q
-            ? { OR: [{ userId: { contains: q } }, { reason: { contains: q } }, { guildId: { contains: q } }] }
+            ? {
+                OR: [
+                  { userId: { contains: q } },
+                  { reason: { contains: q } },
+                  { guildId: { contains: q } },
+                ],
+              }
             : {}),
           ...(startDate || endDate
-            ? { createdAt: { ...(startDate ? { gte: new Date(startDate) } : {}), ...(endDate ? { lte: new Date(endDate) } : {}) } }
+            ? {
+                createdAt: {
+                  ...(startDate ? { gte: new Date(startDate) } : {}),
+                  ...(endDate ? { lte: new Date(endDate) } : {}),
+                },
+              }
             : {}),
         };
-        const orderBy = buildOrderBy(sortBy, sortOrder, SORTABLE_WARNING_FIELDS) ?? { createdAt: 'desc' };
+        const orderBy = buildOrderBy(
+          sortBy,
+          sortOrder,
+          SORTABLE_WARNING_FIELDS
+        ) ?? { createdAt: 'desc' };
         const [warnings, total] = await Promise.all([
           prisma.warning.findMany({
             where,
@@ -199,22 +269,42 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
           },
         };
       } catch {
-        return { status: 500 as const, body: { error: 'Failed to fetch warnings' } };
+        return {
+          status: 500 as const,
+          body: { error: 'Failed to fetch warnings' },
+        };
       }
     },
     getAuditLog: async ({ query }) => {
       try {
-        const { skip, take, q, sortBy, sortOrder, startDate, endDate, action } = query;
+        const { skip, take, q, sortBy, sortOrder, startDate, endDate, action } =
+          query;
         const where: Record<string, unknown> = {
           ...(q
-            ? { OR: [{ targetId: { contains: q } }, { action: { contains: q } }, { guildId: { contains: q } }, { reason: { contains: q } }] }
+            ? {
+                OR: [
+                  { targetId: { contains: q } },
+                  { action: { contains: q } },
+                  { guildId: { contains: q } },
+                  { reason: { contains: q } },
+                ],
+              }
             : {}),
           ...(action ? { action } : {}),
           ...(startDate || endDate
-            ? { createdAt: { ...(startDate ? { gte: new Date(startDate) } : {}), ...(endDate ? { lte: new Date(endDate) } : {}) } }
+            ? {
+                createdAt: {
+                  ...(startDate ? { gte: new Date(startDate) } : {}),
+                  ...(endDate ? { lte: new Date(endDate) } : {}),
+                },
+              }
             : {}),
         };
-        const orderBy = buildOrderBy(sortBy, sortOrder, SORTABLE_AUDIT_FIELDS) ?? { createdAt: 'desc' };
+        const orderBy = buildOrderBy(
+          sortBy,
+          sortOrder,
+          SORTABLE_AUDIT_FIELDS
+        ) ?? { createdAt: 'desc' };
         const [logs, total] = await Promise.all([
           prisma.auditLog.findMany({
             where,
@@ -242,7 +332,10 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
           },
         };
       } catch {
-        return { status: 500 as const, body: { error: 'Failed to fetch audit log' } };
+        return {
+          status: 500 as const,
+          body: { error: 'Failed to fetch audit log' },
+        };
       }
     },
   });

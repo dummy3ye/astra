@@ -23,7 +23,7 @@ describe('Dashboard page', () => {
     render(
       <MemoryRouter>
         <Dashboard />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
     expect(screen.getByText('Overview')).toBeInTheDocument();
   });
@@ -37,7 +37,12 @@ describe('Dashboard page', () => {
         totalWarnings: 20,
         totalBans: 8,
         recentWarnings: [
-          { id: 1, userId: 'u1', reason: 'spam', createdAt: new Date().toISOString() },
+          {
+            id: 1,
+            userId: 'u1',
+            reason: 'spam',
+            createdAt: new Date().toISOString(),
+          },
         ],
         auditActionBreakdown: [{ action: 'ban', count: 5 }],
         warningsByDay: [{ date: '2025-06-25', count: 2 }],
@@ -47,7 +52,7 @@ describe('Dashboard page', () => {
     render(
       <MemoryRouter>
         <Dashboard />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(await screen.findByText('Overview')).toBeInTheDocument();
@@ -64,10 +69,12 @@ describe('Dashboard page', () => {
     render(
       <MemoryRouter>
         <Dashboard />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
-    expect(await screen.findByText('Failed to load dashboard data.')).toBeInTheDocument();
+    expect(
+      await screen.findByText('Failed to load dashboard data.')
+    ).toBeInTheDocument();
   });
 
   it('shows error state on network failure', async () => {
@@ -76,17 +83,22 @@ describe('Dashboard page', () => {
     render(
       <MemoryRouter>
         <Dashboard />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
-    expect(await screen.findByText('Failed to load dashboard data.')).toBeInTheDocument();
+    expect(
+      await screen.findByText('Failed to load dashboard data.')
+    ).toBeInTheDocument();
   });
 
   it('hides recent warnings section when empty', async () => {
     mockGetStats.mockResolvedValue({
       status: 200,
       body: {
-        totalUsers: 0, totalServers: 0, totalWarnings: 0, totalBans: 0,
+        totalUsers: 0,
+        totalServers: 0,
+        totalWarnings: 0,
+        totalBans: 0,
         recentWarnings: [],
         auditActionBreakdown: [],
         warningsByDay: [],
@@ -96,7 +108,7 @@ describe('Dashboard page', () => {
     render(
       <MemoryRouter>
         <Dashboard />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     await screen.findByText('Overview');

@@ -7,7 +7,10 @@ const ROOT = process.cwd();
 
 function checkTracked(file) {
   try {
-    execSync(`git ls-files --error-unmatch "${file}" 2>/dev/null`, { cwd: ROOT, stdio: 'pipe' });
+    execSync(`git ls-files --error-unmatch "${file}" 2>/dev/null`, {
+      cwd: ROOT,
+      stdio: 'pipe',
+    });
     return true;
   } catch {
     return false;
@@ -16,7 +19,10 @@ function checkTracked(file) {
 
 function checkModified(file) {
   try {
-    const out = execSync(`git status --porcelain "${file}" 2>/dev/null`, { cwd: ROOT, encoding: 'utf-8' });
+    const out = execSync(`git status --porcelain "${file}" 2>/dev/null`, {
+      cwd: ROOT,
+      encoding: 'utf-8',
+    });
     return out.trim().length > 0;
   } catch {
     return false;
@@ -25,7 +31,10 @@ function checkModified(file) {
 
 function checkDirtyRepo() {
   try {
-    const out = execSync('git status --porcelain 2>/dev/null', { cwd: ROOT, encoding: 'utf-8' });
+    const out = execSync('git status --porcelain 2>/dev/null', {
+      cwd: ROOT,
+      encoding: 'utf-8',
+    });
     const lines = out.trim().split('\n').filter(Boolean);
     return lines.length > 0 ? lines : null;
   } catch {
@@ -36,7 +45,11 @@ function checkDirtyRepo() {
 function main() {
   const target = process.argv[2];
   if (!target) {
-    console.log(JSON.stringify({ error: 'Usage: node scripts/coder-check.mjs <file-or-dir>' }));
+    console.log(
+      JSON.stringify({
+        error: 'Usage: node scripts/coder-check.mjs <file-or-dir>',
+      })
+    );
     process.exit(1);
   }
 
@@ -65,7 +78,8 @@ function main() {
   }
 
   if (dirtyFiles && dirtyFiles.length > 0) {
-    result.warning = (result.warning ? result.warning + '; ' : '') +
+    result.warning =
+      (result.warning ? result.warning + '; ' : '') +
       `Repo has ${dirtyFiles.length} uncommitted file(s)`;
   }
 

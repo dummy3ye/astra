@@ -121,7 +121,9 @@ describe('settingsCommand', () => {
 
       expect(mockUpsert).not.toHaveBeenCalled();
       expect(reply).toHaveBeenCalledWith(
-        expect.objectContaining({ content: expect.stringContaining('at least one channel') })
+        expect.objectContaining({
+          content: expect.stringContaining('at least one channel'),
+        })
       );
     });
   });
@@ -133,7 +135,8 @@ describe('settingsCommand', () => {
         guildId: 'guild-1',
         options: {
           getSubcommand: () => 'warn-escalation',
-          getInteger: (name: string) => (name === 'timeout_at' ? 3 : name === 'ban_at' ? 5 : null),
+          getInteger: (name: string) =>
+            name === 'timeout_at' ? 3 : name === 'ban_at' ? 5 : null,
         },
         reply,
       };

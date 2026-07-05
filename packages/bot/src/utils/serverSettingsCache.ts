@@ -4,7 +4,9 @@ import { prisma } from '../database/client';
 const cache = new Map<string, { data: ServerSettings; expiry: number }>();
 const TTL_MS = 60_000;
 
-export async function getServerSettings(guildId: string): Promise<ServerSettings | null> {
+export async function getServerSettings(
+  guildId: string
+): Promise<ServerSettings | null> {
   const cached = cache.get(guildId);
   if (cached && Date.now() < cached.expiry) {
     return cached.data;

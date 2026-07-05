@@ -24,8 +24,22 @@ export default function Warnings() {
   const [warnings, setWarnings] = useState<Warning[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const { sortBy, sortOrder, page, search, filters, dateFrom, dateTo, setSortBy, setPage, setSearch, removeFilter, clearFilters, setDateFrom, setDateTo } =
-    useTableState({ defaultSortBy: 'createdAt', defaultSortOrder: 'desc' });
+  const {
+    sortBy,
+    sortOrder,
+    page,
+    search,
+    filters,
+    dateFrom,
+    dateTo,
+    setSortBy,
+    setPage,
+    setSearch,
+    removeFilter,
+    clearFilters,
+    setDateFrom,
+    setDateTo,
+  } = useTableState({ defaultSortBy: 'createdAt', defaultSortOrder: 'desc' });
 
   useEffect(() => {
     setLoading(true);
@@ -54,7 +68,9 @@ export default function Warnings() {
 
   const filtered = warnings.filter((w) => {
     for (const [field, value] of Object.entries(filters)) {
-      const cell = String((w as Record<string, unknown>)[field] ?? '').toLowerCase();
+      const cell = String(
+        (w as Record<string, unknown>)[field] ?? ''
+      ).toLowerCase();
       if (!cell.includes(value.toLowerCase())) return false;
     }
     return true;
@@ -97,7 +113,11 @@ export default function Warnings() {
           onChange={(e) => setDateTo(e.target.value || undefined)}
           title="End date"
         />
-        <ExportButton data={filtered} filename="warnings.csv" columns={EXPORT_COLUMNS} />
+        <ExportButton
+          data={filtered}
+          filename="warnings.csv"
+          columns={EXPORT_COLUMNS}
+        />
       </FilterBar>
       {filtered.length === 0 ? (
         <p className="page-empty">No warnings recorded.</p>
@@ -106,40 +126,88 @@ export default function Warnings() {
           <div className="table-wrapper">
             <table className="data-table">
               <thead>
-              <tr>
-                <SortableHeader field="id" label="ID" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <th>User</th>
-                <SortableHeader field="userId" label="User ID" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="guildId" label="Guild ID" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="reason" label="Reason" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="userLevel" label="User Level" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="userXp" label="User XP" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-                <SortableHeader field="createdAt" label="Date" currentSortBy={sortBy} currentSortOrder={sortOrder} onSort={setSortBy} />
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((w) => (
-                <tr key={w.id}>
-                  <td>{w.id}</td>
-                  <td>
-                    <div className="flex items-center gap-2">
-                      {w.userAvatar && (
-                        <img
-                          src={`https://cdn.discordapp.com/avatars/${w.userId}/${w.userAvatar}.png`}
-                          alt=""
-                          className="w-6 h-6 rounded-full"
-                        />
-                      )}
-                      <div>
-                        <div className="text-sm leading-tight">{w.userDisplayName || w.userName || w.userId}</div>
-                        {w.userName && w.userDisplayName && (
-                          <div className="text-xs text-muted leading-tight">@{w.userName}</div>
+                <tr>
+                  <SortableHeader
+                    field="id"
+                    label="ID"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <th>User</th>
+                  <SortableHeader
+                    field="userId"
+                    label="User ID"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="guildId"
+                    label="Guild ID"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="reason"
+                    label="Reason"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="userLevel"
+                    label="User Level"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="userXp"
+                    label="User XP"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                  <SortableHeader
+                    field="createdAt"
+                    label="Date"
+                    currentSortBy={sortBy}
+                    currentSortOrder={sortOrder}
+                    onSort={setSortBy}
+                  />
+                </tr>
+              </thead>
+              <tbody>
+                {filtered.map((w) => (
+                  <tr key={w.id}>
+                    <td>{w.id}</td>
+                    <td>
+                      <div className="flex items-center gap-2">
+                        {w.userAvatar && (
+                          <img
+                            src={`https://cdn.discordapp.com/avatars/${w.userId}/${w.userAvatar}.png`}
+                            alt=""
+                            className="w-6 h-6 rounded-full"
+                          />
                         )}
+                        <div>
+                          <div className="text-sm leading-tight">
+                            {w.userDisplayName || w.userName || w.userId}
+                          </div>
+                          {w.userName && w.userDisplayName && (
+                            <div className="text-xs text-muted leading-tight">
+                              @{w.userName}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td className="font-mono text-xs text-muted">{w.userId}</td>
-                  <td className="font-mono text-xs text-muted">{w.guildId}</td>
+                    </td>
+                    <td className="font-mono text-xs text-muted">{w.userId}</td>
+                    <td className="font-mono text-xs text-muted">
+                      {w.guildId}
+                    </td>
                     <td className="max-w-[300px] truncate">{w.reason}</td>
                     <td>{w.userLevel}</td>
                     <td>{w.userXp.toLocaleString()}</td>

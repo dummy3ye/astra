@@ -13,7 +13,9 @@ export default function Dashboard() {
   useEffect(() => {
     client
       .getStats()
-      .then((res) => { if (res.status === 200) setStats(res.body); })
+      .then((res) => {
+        if (res.status === 200) setStats(res.body);
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);

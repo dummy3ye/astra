@@ -69,9 +69,19 @@ export async function logAudit(params: {
       .addFields(
         { name: 'Target', value: `<@${params.targetId}>`, inline: true },
         ...(params.moderatorId
-          ? [{ name: 'Moderator', value: `<@${params.moderatorId}>`, inline: true }]
+          ? [
+              {
+                name: 'Moderator',
+                value: `<@${params.moderatorId}>`,
+                inline: true,
+              },
+            ]
           : []),
-        { name: 'Reason', value: params.reason ?? 'No reason provided', inline: false },
+        {
+          name: 'Reason',
+          value: params.reason ?? 'No reason provided',
+          inline: false,
+        }
       )
       .setTimestamp();
 

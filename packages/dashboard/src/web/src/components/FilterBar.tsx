@@ -7,7 +7,12 @@ interface FilterBarProps {
   children?: ReactNode;
 }
 
-export default function FilterBar({ filters, onRemoveFilter, onClearAll, children }: FilterBarProps) {
+export default function FilterBar({
+  filters,
+  onRemoveFilter,
+  onClearAll,
+  children,
+}: FilterBarProps) {
   const entries = Object.entries(filters);
 
   return (
@@ -18,7 +23,10 @@ export default function FilterBar({ filters, onRemoveFilter, onClearAll, childre
           {entries.map(([field, value]) => (
             <span key={field} className="filter-chip">
               {field}: {value}
-              <span className="filter-chip-remove" onClick={() => onRemoveFilter(field)}>
+              <span
+                className="filter-chip-remove"
+                onClick={() => onRemoveFilter(field)}
+              >
                 ×
               </span>
             </span>

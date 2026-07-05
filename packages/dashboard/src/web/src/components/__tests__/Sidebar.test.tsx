@@ -9,7 +9,7 @@ describe('Sidebar', () => {
     render(
       <MemoryRouter>
         <Sidebar />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
     expect(screen.getByText('Astra')).toBeInTheDocument();
     expect(screen.getByText('Overview')).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe('Sidebar', () => {
     render(
       <MemoryRouter>
         <Sidebar />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
     const links = screen.getAllByRole('link');
     expect(links.length).toBe(5);

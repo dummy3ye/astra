@@ -23,7 +23,7 @@ describe('AuditLog page', () => {
     render(
       <MemoryRouter>
         <AuditLog />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
     expect(screen.getByText('Audit Log')).toBeInTheDocument();
   });
@@ -34,9 +34,13 @@ describe('AuditLog page', () => {
       body: {
         items: [
           {
-            id: 1, guildId: 'g1', action: 'ban',
-            targetId: 'u1', targetName: 'u1',
-            moderatorId: 'm1', moderatorName: 'Mod1',
+            id: 1,
+            guildId: 'g1',
+            action: 'ban',
+            targetId: 'u1',
+            targetName: 'u1',
+            moderatorId: 'm1',
+            moderatorName: 'Mod1',
             reason: 'violation',
             createdAt: new Date().toISOString(),
           },
@@ -48,7 +52,7 @@ describe('AuditLog page', () => {
     render(
       <MemoryRouter>
         <AuditLog />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(await screen.findByText('Audit Log')).toBeInTheDocument();
@@ -58,14 +62,19 @@ describe('AuditLog page', () => {
   });
 
   it('shows empty state when no entries', async () => {
-    mockGetAuditLog.mockResolvedValue({ status: 200, body: { items: [], total: 0 } });
+    mockGetAuditLog.mockResolvedValue({
+      status: 200,
+      body: { items: [], total: 0 },
+    });
 
     render(
       <MemoryRouter>
         <AuditLog />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
-    expect(await screen.findByText('No audit entries found.')).toBeInTheDocument();
+    expect(
+      await screen.findByText('No audit entries found.')
+    ).toBeInTheDocument();
   });
 });

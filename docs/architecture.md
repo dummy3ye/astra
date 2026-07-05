@@ -23,11 +23,11 @@
 
 ## Monorepo (npm workspaces + Turborepo)
 
-| Package | Role | Tech |
-|---|---|---|
-| `@astra/bot` | Discord bot | discord.js v14, Prisma, LibSQL |
-| `@astra/shared` | Shared types/contract | TypeScript, TsRest, Zod |
-| `@astra/dashboard` | Web dashboard | Express, React, Vite, Tailwind |
+| Package            | Role                  | Tech                           |
+| ------------------ | --------------------- | ------------------------------ |
+| `@astra/bot`       | Discord bot           | discord.js v14, Prisma, LibSQL |
+| `@astra/shared`    | Shared types/contract | TypeScript, TsRest, Zod        |
+| `@astra/dashboard` | Web dashboard         | Express, React, Vite, Tailwind |
 
 ## Key Design Decisions
 

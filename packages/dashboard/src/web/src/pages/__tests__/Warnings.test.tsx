@@ -23,7 +23,7 @@ describe('Warnings page', () => {
     render(
       <MemoryRouter>
         <Warnings />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
     expect(screen.getByText('Warnings')).toBeInTheDocument();
   });
@@ -34,10 +34,15 @@ describe('Warnings page', () => {
       body: {
         items: [
           {
-            id: 1, userId: 'u1', guildId: 'g1', reason: 'spam',
+            id: 1,
+            userId: 'u1',
+            guildId: 'g1',
+            reason: 'spam',
             createdAt: new Date().toISOString(),
-            userLevel: 3, userXp: 800,
-            userName: 'u1', userDisplayName: 'u1',
+            userLevel: 3,
+            userXp: 800,
+            userName: 'u1',
+            userDisplayName: 'u1',
           },
         ],
         total: 1,
@@ -47,7 +52,7 @@ describe('Warnings page', () => {
     render(
       <MemoryRouter>
         <Warnings />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(await screen.findByText('Warnings')).toBeInTheDocument();
@@ -57,14 +62,19 @@ describe('Warnings page', () => {
   });
 
   it('shows empty state when no warnings', async () => {
-    mockGetWarnings.mockResolvedValue({ status: 200, body: { items: [], total: 0 } });
+    mockGetWarnings.mockResolvedValue({
+      status: 200,
+      body: { items: [], total: 0 },
+    });
 
     render(
       <MemoryRouter>
         <Warnings />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
-    expect(await screen.findByText('No warnings recorded.')).toBeInTheDocument();
+    expect(
+      await screen.findByText('No warnings recorded.')
+    ).toBeInTheDocument();
   });
 });

@@ -10,13 +10,23 @@ describe('ExportButton', () => {
   });
 
   it('is disabled when data is empty', () => {
-    render(<ExportButton data={[]} filename="test.csv" columns={[{ key: 'id', label: 'ID' }]} />);
+    render(
+      <ExportButton
+        data={[]}
+        filename="test.csv"
+        columns={[{ key: 'id', label: 'ID' }]}
+      />
+    );
     expect(screen.getByText('Export CSV')).toBeDisabled();
   });
 
   it('is enabled when data is non-empty', () => {
     render(
-      <ExportButton data={[{ id: 1 }]} filename="test.csv" columns={[{ key: 'id', label: 'ID' }]} />,
+      <ExportButton
+        data={[{ id: 1 }]}
+        filename="test.csv"
+        columns={[{ key: 'id', label: 'ID' }]}
+      />
     );
     expect(screen.getByText('Export CSV')).toBeEnabled();
   });

@@ -23,7 +23,7 @@ describe('Servers page', () => {
     render(
       <MemoryRouter>
         <Servers />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
     expect(screen.getByText('Servers')).toBeInTheDocument();
   });
@@ -33,9 +33,15 @@ describe('Servers page', () => {
       status: 200,
       body: [
         {
-          guildId: 'g1', name: 'My Server', memberCount: 50, warningCount: 5,
-          blockLinks: true, blockedWords: 'bad',
-          warnTimeoutThreshold: 3, warnBanThreshold: 5, levelRoles: 2,
+          guildId: 'g1',
+          name: 'My Server',
+          memberCount: 50,
+          warningCount: 5,
+          blockLinks: true,
+          blockedWords: 'bad',
+          warnTimeoutThreshold: 3,
+          warnBanThreshold: 5,
+          levelRoles: 2,
         },
       ],
     });
@@ -43,7 +49,7 @@ describe('Servers page', () => {
     render(
       <MemoryRouter>
         <Servers />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(await screen.findByText('Servers')).toBeInTheDocument();
@@ -59,7 +65,7 @@ describe('Servers page', () => {
     render(
       <MemoryRouter>
         <Servers />
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     expect(await screen.findByText('No servers found.')).toBeInTheDocument();

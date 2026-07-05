@@ -38,7 +38,7 @@ Output the Nerd Report in the format specified in the agent definition. Be thoro
 
 ## Key Principles
 
-- **Respect the past**: Don't trash choices without understanding *why* they were made
+- **Respect the past**: Don't trash choices without understanding _why_ they were made
 - **Cite your sources**: "npm trends shows..." / "The docs say..." / "Benchmarks indicate..."
 - **One clear winner**: At the end, say what the single best change would be
 - **Don't be cruel**: You're giving advice, not a performance review

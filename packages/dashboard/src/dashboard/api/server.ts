@@ -8,25 +8,32 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Environment variables
-const JWT_SECRET = process.env.DASHBOARD_JWT_SECRET || 'dashboard-secret-change-in-production';
+const JWT_SECRET =
+  process.env.DASHBOARD_JWT_SECRET || 'dashboard-secret-change-in-production';
 const DASHBOARD_PASSWORD = process.env.DASHBOARD_PASSWORD || 'admin';
 
 // Security middleware
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'none'"],
-      styleSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      imgSrc: ["'self'", "data:"],
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'none'"],
+        styleSrc: ["'self'"],
+        scriptSrc: ["'self'"],
+        imgSrc: ["'self'", 'data:'],
+      },
     },
-  },
-}));
+  })
+);
 
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS?.split(',') || ['http://localhost:3000'],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: process.env.ALLOWED_ORIGINS?.split(',') || [
+      'http://localhost:3000',
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -59,7 +66,10 @@ app.post('/api/auth/login', async (req, res) => {
         JWT_SECRET,
         { expiresIn: '24h' }
       );
-      res.json({ token, user: { userId: 'admin', username: 'admin', role: 'admin' } });
+      res.json({
+        token,
+        user: { userId: 'admin', username: 'admin', role: 'admin' },
+      });
     } else {
       res.status(401).json({ error: 'Invalid credentials.' });
     }
@@ -77,7 +87,7 @@ app.get('/api/stats', authenticateToken, async (req, res) => {
       totalWarnings,
       activeAutomod,
       activeMembers,
-      dailyWarnings
+      dailyWarnings,
     ] = await Promise.all([
       prisma.user.count(),
       prisma.serverSettings.count(),
@@ -91,10 +101,11 @@ app.get('/api/stats', authenticateToken, async (req, res) => {
           },
         },
         select: { createdAt: true },
-      })
+      }),
     ]);
 
-    const today = new Set(dailyWarnings.map(w => w.createdAt.toDateString())).size;
+    const today = new Set(dailyWarnings.map((w) => w.createdAt.toDateString()))
+      .size;
 
     res.json({
       totalUsers,
@@ -115,7 +126,9 @@ app.get('/api/stats', authenticateToken, async (req, res) => {
 app.get('/api/bans', authenticateToken, async (req, res) => {
   try {
     const currentDate = new Date();
-    const fifteenDaysAgo = new Date(currentDate.getTime() - 15 * 24 * 60 * 60 * 1000);
+    const fifteenDaysAgo = new Date(
+      currentDate.getTime() - 15 * 24 * 60 * 60 * 1000
+    );
 
     const warnings = await prisma.warning.findMany({
       include: {
@@ -127,10 +140,12 @@ app.get('/api/bans', authenticateToken, async (req, res) => {
       take: 100,
     });
 
-    const enrichedBans = warnings.map(warning => {
+    const enrichedBans = warnings.map((warning) => {
       const createdAt = new Date(warning.createdAt);
       const isRecent = createdAt > fifteenDaysAgo;
-      const daysAgo = Math.floor((currentDate.getTime() - createdAt.getTime()) / (1000 * 60 * 60 * 24));
+      const daysAgo = Math.floor(
+        (currentDate.getTime() - createdAt.getTime()) / (1000 * 60 * 60 * 24)
+      );
 
       return {
         id: warning.id,
@@ -180,7 +195,7 @@ app.get('/api/servers', authenticateToken, async (req, res) => {
       },
     });
 
-    const enrichedServers = servers.map(server => {
+    const enrichedServers = servers.map((server) => {
       return {
         guildId: server.guildId,
         prefix: server.prefix,
@@ -216,7 +231,7 @@ app.get('/api/users', authenticateToken, async (req, res) => {
       take: 100,
     });
 
-    const enrichedUsers = users.map(user => {
+    const enrichedUsers = users.map((user) => {
       const level = Math.floor(Math.sqrt(user.xp / 100)) + 1;
       const nextLevelXp = level * 100;
       const xpForNextLevel = Math.max(0, nextLevelXp - user.xp);
@@ -280,11 +295,13 @@ app.get('/api/automod', authenticateToken, async (req, res) => {
       },
     });
 
-    const automodStatus = allServers.map(server => {
+    const automodStatus = allServers.map((server) => {
       return {
         guildId: server.guildId,
         blockLinks: server.blockLinks,
-        blockedWords: server.blockedWords ? server.blockedWords.split(',').filter(w => w.trim()) : [],
+        blockedWords: server.blockedWords
+          ? server.blockedWords.split(',').filter((w) => w.trim())
+          : [],
         lastChecked: new Date().toISOString(),
       };
     });
@@ -297,27 +314,31 @@ app.get('/api/automod', authenticateToken, async (req, res) => {
 });
 
 // Admin action to clear old data
-app.post('/api/admin/clear-old-warnings', authenticateToken, async (req, res) => {
-  try {
-    const cutoffDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000); // 30 days ago
+app.post(
+  '/api/admin/clear-old-warnings',
+  authenticateToken,
+  async (req, res) => {
+    try {
+      const cutoffDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000); // 30 days ago
 
-    const result = await prisma.warning.deleteMany({
-      where: {
-        createdAt: {
-          lt: cutoffDate,
+      const result = await prisma.warning.deleteMany({
+        where: {
+          createdAt: {
+            lt: cutoffDate,
+          },
         },
-      },
-    });
+      });
 
-    res.json({
-      message: `Deleted ${result.count} old warnings.`,
-      deletedCount: result.count,
-    });
-  } catch (error) {
-    console.error('Clear old warnings error:', error);
-    res.status(500).json({ error: 'Failed to clear old warnings.' });
+      res.json({
+        message: `Deleted ${result.count} old warnings.`,
+        deletedCount: result.count,
+      });
+    } catch (error) {
+      console.error('Clear old warnings error:', error);
+      res.status(500).json({ error: 'Failed to clear old warnings.' });
+    }
   }
-});
+);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

@@ -1,1 +1,1637 @@
-{"files":{"packages/bot/dist/events/member/guildMemberAdd.d.ts":{"size":174,"mtime_nanos":1783233052936220803,"mode":420,"is_dir":false},"packages/bot/dist/env.js":{"size":684,"mtime_nanos":1783233052656216401,"mode":420,"is_dir":false},"packages/bot/dist/events/memberEvents.d.ts":{"size":294,"mtime_nanos":1782854359070255782,"mode":420,"is_dir":false},"packages/bot/dist/events/event.d.ts":{"size":254,"mtime_nanos":1783233052726217502,"mode":420,"is_dir":false},"packages/bot/dist/events/guild/guildCreate.d.ts":{"size":162,"mtime_nanos":1783233052921220567,"mode":420,"is_dir":false},"packages/bot/dist/commands/purge.js":{"size":1386,"mtime_nanos":1782854358983261706,"mode":420,"is_dir":false},"packages/bot/dist/utils/hierarchy.d.ts":{"size":234,"mtime_nanos":1783233052841219310,"mode":420,"is_dir":false},"packages/bot/dist":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/utils/clientInstance.js":{"size":243,"mtime_nanos":1783233052737217675,"mode":420,"is_dir":false},"packages/bot/dist/commands/untimeout.d.ts.map":{"size":203,"mtime_nanos":1782854359021259118,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/ban.js.map":{"size":1868,"mtime_nanos":1783233052846219388,"mode":420,"is_dir":false},"packages/bot/dist/env.d.ts":{"size":140,"mtime_nanos":1783233052676216716,"mode":420,"is_dir":false},"packages/bot/dist/events/index.d.ts.map":{"size":226,"mtime_nanos":1783233052735217643,"mode":420,"is_dir":false},"packages/bot/dist/events/ready/ready.d.ts":{"size":144,"mtime_nanos":1783233052963221228,"mode":420,"is_dir":false},"packages/bot/dist/events/member/memberEvents.js":{"size":1698,"mtime_nanos":1783087653034264012,"mode":420,"is_dir":false},"packages/bot/dist/commands/warnings.d.ts":{"size":122,"mtime_nanos":1782854359037258028,"mode":420,"is_dir":false},"packages/bot/dist/utils/serverSettingsCache.d.ts.map":{"size":319,"mtime_nanos":1783233052931220725,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings.js":{"size":9091,"mtime_nanos":1782854359003260343,"mode":420,"is_dir":false},"packages/bot/dist/commands/purge.d.ts":{"size":116,"mtime_nanos":1782854358984261638,"mode":420,"is_dir":false},"packages/bot/dist/events/index.d.ts":{"size":150,"mtime_nanos":1783233052735217643,"mode":420,"is_dir":false},"packages/bot/dist/commands/leaderboard.d.ts.map":{"size":207,"mtime_nanos":1782854358975262251,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warn.js.map":{"size":3725,"mtime_nanos":1783233052890220080,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warn.d.ts.map":{"size":205,"mtime_nanos":1783233052891220096,"mode":420,"is_dir":false},"packages/bot/dist/events/interaction/interactionCreate.js.map":{"size":937,"mtime_nanos":1783233052924220615,"mode":420,"is_dir":false},"packages/bot/dist/events/member/memberEvents.d.ts.map":{"size":303,"mtime_nanos":1783087653045264233,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/purge.d.ts.map":{"size":207,"mtime_nanos":1783233052866219703,"mode":420,"is_dir":false},"packages/bot/dist/commands/unban.d.ts.map":{"size":193,"mtime_nanos":1782854359017259390,"mode":420,"is_dir":false},"packages/bot/dist/events/member/guildMemberRemove.d.ts":{"size":186,"mtime_nanos":1783233052940220866,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/rank.d.ts":{"size":115,"mtime_nanos":1783233052827219090,"mode":420,"is_dir":false},"packages/bot/dist/events/guildMemberRemove.js.map":{"size":853,"mtime_nanos":1782854359048257279,"mode":420,"is_dir":false},"packages/bot/dist/utils/clientInstance.d.ts":{"size":178,"mtime_nanos":1783233052740217722,"mode":420,"is_dir":false},"packages/bot/dist/events/message/messageCreate.d.ts.map":{"size":257,"mtime_nanos":1783233052957221133,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/ban.js":{"size":1866,"mtime_nanos":1783233052846219388,"mode":420,"is_dir":false},"packages/bot/dist/commands/ban.d.ts.map":{"size":189,"mtime_nanos":1782854358948264091,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/events/interaction":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/events/interactionCreate.d.ts":{"size":185,"mtime_nanos":1782854359056256735,"mode":420,"is_dir":false},"packages/bot/dist/commands/rank.js.map":{"size":1320,"mtime_nanos":1782854358988261365,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings/settings.d.ts":{"size":123,"mtime_nanos":1783233052912220426,"mode":420,"is_dir":false},"packages/bot/dist/events/interaction/interactionCreate.d.ts.map":{"size":271,"mtime_nanos":1783233052925220630,"mode":420,"is_dir":false},"packages/bot/dist/database":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/utils/hierarchy.d.ts.map":{"size":323,"mtime_nanos":1783233052841219310,"mode":420,"is_dir":false},"packages/bot/dist/events/guildMemberAdd.d.ts.map":{"size":250,"mtime_nanos":1782854359044257552,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/clearwarns.d.ts":{"size":127,"mtime_nanos":1783233052858219577,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/ban.d.ts":{"size":113,"mtime_nanos":1783233052847219404,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/purge.js":{"size":1261,"mtime_nanos":1783233052865219687,"mode":420,"is_dir":false},"packages/bot/dist/events/member/memberEvents.d.ts":{"size":294,"mtime_nanos":1783087653045264233,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warn.js":{"size":4552,"mtime_nanos":1783233052890220080,"mode":420,"is_dir":false},"packages/bot/dist/events/memberEvents.js":{"size":1601,"mtime_nanos":1782854359062256326,"mode":420,"is_dir":false},"packages/bot/dist/utils/serverSettingsCache.d.ts":{"size":263,"mtime_nanos":1783233052932220740,"mode":420,"is_dir":false},"packages/bot/dist/commands/unban.d.ts":{"size":116,"mtime_nanos":1782854359017259390,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/timeout.d.ts":{"size":121,"mtime_nanos":1783233052874219829,"mode":420,"is_dir":false},"packages/bot/dist/database/client.d.ts":{"size":273,"mtime_nanos":1783233052802218697,"mode":420,"is_dir":false},"packages/bot/dist/events/ready.js.map":{"size":332,"mtime_nanos":1782854359086254693,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/untimeout.js.map":{"size":1680,"mtime_nanos":1783233052881219939,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warn.d.ts":{"size":115,"mtime_nanos":1783233052891220096,"mode":420,"is_dir":false},"packages/bot/dist/database/client.d.ts.map":{"size":236,"mtime_nanos":1783233052801218681,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/leaderboard.js":{"size":1510,"mtime_nanos":1783233052820218980,"mode":420,"is_dir":false},"packages/bot/dist/commands/unban.js.map":{"size":1337,"mtime_nanos":1782854359015259526,"mode":420,"is_dir":false},"packages/bot/dist/commands/warn.d.ts":{"size":114,"mtime_nanos":1782854359031258437,"mode":420,"is_dir":false},"packages/bot/dist/events/member/guildMemberAdd.js.map":{"size":912,"mtime_nanos":1783233052935220788,"mode":420,"is_dir":false},"packages/bot/dist/events/ready.d.ts":{"size":143,"mtime_nanos":1782854359088254556,"mode":420,"is_dir":false},"packages/bot/dist/commands/warn.d.ts.map":{"size":191,"mtime_nanos":1782854359031258437,"mode":420,"is_dir":false},"packages/bot/dist/index.d.ts":{"size":51,"mtime_nanos":1783233052744217785,"mode":420,"is_dir":false},"packages/bot/dist/commands/command.js":{"size":46,"mtime_nanos":1783233052679216763,"mode":420,"is_dir":false},"packages/bot/dist/events/ready/ready.js":{"size":887,"mtime_nanos":1783233052963221228,"mode":420,"is_dir":false},"packages/bot/dist/commands/timeout.js.map":{"size":2537,"mtime_nanos":1782854359011259798,"mode":420,"is_dir":false},"packages/bot/dist/events/event.js.map":{"size":112,"mtime_nanos":1783233052721217423,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod/automod.d.ts":{"size":121,"mtime_nanos":1783233052812218854,"mode":420,"is_dir":false},"packages/bot/dist/commands/warnings.js":{"size":2185,"mtime_nanos":1782854359035258164,"mode":420,"is_dir":false},"packages/bot/dist/events/guild":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/events/guildMemberAdd.js":{"size":982,"mtime_nanos":1782854359042257688,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/unban.d.ts.map":{"size":207,"mtime_nanos":1783233052878219892,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/clearwarns.js":{"size":1626,"mtime_nanos":1783233052857219561,"mode":420,"is_dir":false},"packages/bot/dist/events/messageCreate.d.ts":{"size":169,"mtime_nanos":1782854359085254761,"mode":420,"is_dir":false},"packages/bot/dist/commands/ping.d.ts.map":{"size":190,"mtime_nanos":1782854358980261910,"mode":420,"is_dir":false},"packages/bot/dist/events/guildMemberAdd.d.ts":{"size":173,"mtime_nanos":1782854359044257552,"mode":420,"is_dir":false},"packages/bot/dist/commands/ban.js.map":{"size":1615,"mtime_nanos":1782854358946264228,"mode":420,"is_dir":false},"packages/bot/dist/commands/utility":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/index.d.ts.map":{"size":123,"mtime_nanos":1783233052744217785,"mode":420,"is_dir":false},"packages/bot/dist/utils/hierarchy.js":{"size":1152,"mtime_nanos":1783233052840219294,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/leaderboard.js.map":{"size":1386,"mtime_nanos":1783233052819218964,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warnings.d.ts":{"size":123,"mtime_nanos":1783233052896220174,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/kick.js":{"size":1866,"mtime_nanos":1783233052860219608,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/rank.js":{"size":1488,"mtime_nanos":1783233052826219074,"mode":420,"is_dir":false},"packages/bot/dist/events/member/guildMemberAdd.d.ts.map":{"size":260,"mtime_nanos":1783233052936220803,"mode":420,"is_dir":false},"packages/bot/dist/commands/rank.d.ts":{"size":114,"mtime_nanos":1782854358990261229,"mode":420,"is_dir":false},"packages/bot/dist/commands/kick.d.ts.map":{"size":191,"mtime_nanos":1782854358967262796,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings.js.map":{"size":6626,"mtime_nanos":1782854359002260411,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/leaderboard.d.ts.map":{"size":219,"mtime_nanos":1783233052821218995,"mode":420,"is_dir":false},"packages/bot/dist/events/guildMemberRemove.d.ts.map":{"size":256,"mtime_nanos":1782854359050257143,"mode":420,"is_dir":false},"packages/bot/dist/events/message/messageCreate.d.ts":{"size":170,"mtime_nanos":1783233052957221133,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/events/message/messageCreate.js":{"size":9171,"mtime_nanos":1783233052955221102,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/kick.js.map":{"size":1821,"mtime_nanos":1783233052860219608,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings.d.ts":{"size":122,"mtime_nanos":1782854359004260275,"mode":420,"is_dir":false},"packages/bot/dist/services/auditLog.js.map":{"size":2272,"mtime_nanos":1783233052833219184,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/purge.js.map":{"size":1155,"mtime_nanos":1783233052865219687,"mode":420,"is_dir":false},"packages/bot/dist/commands/clearwarns.js.map":{"size":1193,"mtime_nanos":1782854358961263205,"mode":420,"is_dir":false},"packages/bot/dist/commands/command.d.ts":{"size":388,"mtime_nanos":1783233052684216842,"mode":420,"is_dir":false},"packages/bot/dist/commands/untimeout.js":{"size":1923,"mtime_nanos":1782854359020259186,"mode":420,"is_dir":false},"packages/bot/dist/commands/ping.d.ts":{"size":114,"mtime_nanos":1782854358980261910,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod.js.map":{"size":1985,"mtime_nanos":1782854358922265864,"mode":420,"is_dir":false},"packages/bot/dist/commands/untimeout.js.map":{"size":1448,"mtime_nanos":1782854359020259186,"mode":420,"is_dir":false},"packages/bot/dist/commands/ping.js.map":{"size":563,"mtime_nanos":1782854358979261978,"mode":420,"is_dir":false},"packages/bot/dist/index.js":{"size":1045,"mtime_nanos":1783233052743217769,"mode":420,"is_dir":false},"packages/bot/dist/commands/command.d.ts.map":{"size":350,"mtime_nanos":1783233052683216826,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warnings.js":{"size":2072,"mtime_nanos":1783233052895220159,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings/settings.d.ts.map":{"size":211,"mtime_nanos":1783233052911220410,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod.d.ts.map":{"size":197,"mtime_nanos":1782854358925265659,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/clearwarns.js.map":{"size":1452,"mtime_nanos":1783233052857219561,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/untimeout.d.ts.map":{"size":217,"mtime_nanos":1783233052883219970,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warnings.d.ts.map":{"size":213,"mtime_nanos":1783233052896220174,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod.js":{"size":2780,"mtime_nanos":1782854358923265795,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/untimeout.d.ts":{"size":125,"mtime_nanos":1783233052883219970,"mode":420,"is_dir":false},"packages/bot/dist/deploy-commands.d.ts":{"size":61,"mtime_nanos":1783233052716217345,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod/automod.js.map":{"size":2077,"mtime_nanos":1783233052810218822,"mode":420,"is_dir":false},"packages/bot/dist/deploy-commands.d.ts.map":{"size":143,"mtime_nanos":1783233052715217329,"mode":420,"is_dir":false},"packages/bot/dist/events/interaction/interactionCreate.d.ts":{"size":186,"mtime_nanos":1783233052925220630,"mode":420,"is_dir":false},"packages/bot/dist/events/interactionCreate.d.ts.map":{"size":256,"mtime_nanos":1782854359056256735,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/kick.d.ts":{"size":115,"mtime_nanos":1783233052862219640,"mode":420,"is_dir":false},"packages/bot/dist/commands/warn.js.map":{"size":3206,"mtime_nanos":1782854359030258505,"mode":420,"is_dir":false},"packages/bot/dist/commands/unban.js":{"size":1789,"mtime_nanos":1782854359016259458,"mode":420,"is_dir":false},"packages/bot/dist/services/warnings.d.ts.map":{"size":816,"mtime_nanos":1783233052854219514,"mode":420,"is_dir":false},"packages/bot/dist/utils/clientInstance.d.ts.map":{"size":247,"mtime_nanos":1783233052740217722,"mode":420,"is_dir":false},"packages/bot/dist/database/client.js":{"size":310,"mtime_nanos":1783233052747217832,"mode":420,"is_dir":false},"packages/bot/dist/utils/serverSettingsCache.js":{"size":665,"mtime_nanos":1783233052930220709,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod/automod.js":{"size":2659,"mtime_nanos":1783233052810218822,"mode":420,"is_dir":false},"packages/bot/dist/utils/hierarchy.js.map":{"size":1038,"mtime_nanos":1783233052840219294,"mode":420,"is_dir":false},"packages/bot/dist/events/event.d.ts.map":{"size":371,"mtime_nanos":1783233052725217486,"mode":420,"is_dir":false},"packages/bot/dist/events/event.js":{"size":44,"mtime_nanos":1783233052721217423,"mode":420,"is_dir":false},"packages/bot/dist/events/member/memberEvents.js.map":{"size":1521,"mtime_nanos":1783087653034264012,"mode":420,"is_dir":false},"packages/bot/dist/services/auditLog.d.ts":{"size":313,"mtime_nanos":1783233052836219231,"mode":420,"is_dir":false},"packages/bot/dist/commands/kick.js":{"size":1860,"mtime_nanos":1782854358966262865,"mode":420,"is_dir":false},"packages/bot/dist/commands":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/services/warnings.js":{"size":1269,"mtime_nanos":1783233052850219451,"mode":420,"is_dir":false},"packages/bot/dist/events/interactionCreate.js.map":{"size":890,"mtime_nanos":1782854359054256871,"mode":420,"is_dir":false},"packages/bot/dist/events/ready.d.ts.map":{"size":225,"mtime_nanos":1782854359087254625,"mode":420,"is_dir":false},"packages/bot/dist/commands/utility/ping.d.ts.map":{"size":201,"mtime_nanos":1783233052914220457,"mode":420,"is_dir":false},"packages/bot/dist/events/member/guildMemberRemove.js.map":{"size":925,"mtime_nanos":1783233052939220850,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/commands/index.d.ts":{"size":182,"mtime_nanos":1783233052708217219,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod.d.ts":{"size":120,"mtime_nanos":1782854358925265659,"mode":420,"is_dir":false},"packages/bot/dist/commands/timeout.js":{"size":2879,"mtime_nanos":1782854359012259730,"mode":420,"is_dir":false},"packages/bot/dist/commands/untimeout.d.ts":{"size":124,"mtime_nanos":1782854359021259118,"mode":420,"is_dir":false},"packages/bot/dist/utils":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/events/index.js":{"size":1629,"mtime_nanos":1783233052733217612,"mode":420,"is_dir":false},"packages/bot/dist/events/message":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/commands/rank.d.ts.map":{"size":191,"mtime_nanos":1782854358990261229,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/kick.d.ts.map":{"size":205,"mtime_nanos":1783233052861219624,"mode":420,"is_dir":false},"packages/bot/dist/events/member/guildMemberRemove.js":{"size":900,"mtime_nanos":1783233052939220850,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/commands/warnings.js.map":{"size":1700,"mtime_nanos":1782854359035258164,"mode":420,"is_dir":false},"packages/bot/dist/database/client.js.map":{"size":403,"mtime_nanos":1783233052746217816,"mode":420,"is_dir":false},"packages/bot/dist/events/member":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/commands/moderation/unban.js":{"size":1664,"mtime_nanos":1783233052877219876,"mode":420,"is_dir":false},"packages/bot/dist/services/warnings.js.map":{"size":1344,"mtime_nanos":1783233052850219451,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/timeout.js.map":{"size":2793,"mtime_nanos":1783233052873219813,"mode":420,"is_dir":false},"packages/bot/dist/commands/rank.js":{"size":1606,"mtime_nanos":1782854358988261365,"mode":420,"is_dir":false},"packages/bot/dist/deploy-commands.js":{"size":709,"mtime_nanos":1783233052713217298,"mode":420,"is_dir":false},"packages/bot/dist/events/guild/guildCreate.js":{"size":558,"mtime_nanos":1783233052920220552,"mode":420,"is_dir":false},"packages/bot/dist/commands/command.js.map":{"size":118,"mtime_nanos":1783233052678216747,"mode":420,"is_dir":false},"packages/bot/dist/events/messageCreate.js":{"size":7605,"mtime_nanos":1782854359083254897,"mode":420,"is_dir":false},"packages/bot/dist/events/guildMemberRemove.d.ts":{"size":185,"mtime_nanos":1782854359050257143,"mode":420,"is_dir":false},"packages/bot/dist/events/guildMemberAdd.js.map":{"size":840,"mtime_nanos":1782854359042257688,"mode":420,"is_dir":false},"packages/bot/dist/events/index.js.map":{"size":1893,"mtime_nanos":1783233052733217612,"mode":420,"is_dir":false},"packages/bot/dist/commands/kick.js.map":{"size":1568,"mtime_nanos":1782854358966262865,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings/settings.js":{"size":8979,"mtime_nanos":1783233052910220395,"mode":420,"is_dir":false},"packages/bot/dist/events/guild/guildCreate.d.ts.map":{"size":251,"mtime_nanos":1783233052921220567,"mode":420,"is_dir":false},"packages/bot/dist/commands/ban.d.ts":{"size":112,"mtime_nanos":1782854358949264023,"mode":420,"is_dir":false},"packages/bot/dist/commands/timeout.d.ts":{"size":120,"mtime_nanos":1782854359013259662,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/rank.d.ts.map":{"size":203,"mtime_nanos":1783233052827219090,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/untimeout.js":{"size":1948,"mtime_nanos":1783233052882219954,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/rank.js.map":{"size":1400,"mtime_nanos":1783233052826219074,"mode":420,"is_dir":false},"packages/bot/dist/commands/utility/ping.js.map":{"size":612,"mtime_nanos":1783233052913220442,"mode":420,"is_dir":false},"packages/bot/dist/deploy-commands.js.map":{"size":882,"mtime_nanos":1783233052713217298,"mode":420,"is_dir":false},"packages/bot/dist/events/memberEvents.js.map":{"size":1429,"mtime_nanos":1782854359062256326,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/unban.js.map":{"size":1453,"mtime_nanos":1783233052877219876,"mode":420,"is_dir":false},"packages/bot/dist/events/messageCreate.d.ts.map":{"size":246,"mtime_nanos":1782854359084254829,"mode":420,"is_dir":false},"packages/bot/dist/env.js.map":{"size":962,"mtime_nanos":1783233052655216386,"mode":420,"is_dir":false},"packages/bot/dist/events/guildMemberRemove.js":{"size":997,"mtime_nanos":1782854359049257211,"mode":420,"is_dir":false},"packages/bot/dist/commands/leaderboard.js.map":{"size":1306,"mtime_nanos":1782854358973262387,"mode":420,"is_dir":false},"packages/bot/dist/services/warnings.d.ts":{"size":673,"mtime_nanos":1783233052854219514,"mode":420,"is_dir":false},"packages/bot/dist/env.d.ts.map":{"size":133,"mtime_nanos":1783233052676216716,"mode":420,"is_dir":false},"packages/bot/dist/index.js.map":{"size":849,"mtime_nanos":1783233052742217753,"mode":420,"is_dir":false},"packages/bot/dist/services/auditLog.d.ts.map":{"size":435,"mtime_nanos":1783233052836219231,"mode":420,"is_dir":false},"packages/bot/dist/events/ready.js":{"size":312,"mtime_nanos":1782854359086254693,"mode":420,"is_dir":false},"packages/bot/dist/services/auditLog.js":{"size":2637,"mtime_nanos":1783233052833219184,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/clearwarns.d.ts.map":{"size":219,"mtime_nanos":1783233052858219577,"mode":420,"is_dir":false},"packages/bot/dist/commands/ban.js":{"size":1856,"mtime_nanos":1782854358946264228,"mode":420,"is_dir":false},"packages/bot/dist/commands/utility/ping.js":{"size":581,"mtime_nanos":1783233052913220442,"mode":420,"is_dir":false},"packages/bot/dist/commands/clearwarns.d.ts.map":{"size":205,"mtime_nanos":1782854358962263137,"mode":420,"is_dir":false},"packages/bot/dist/commands/utility/ping.d.ts":{"size":115,"mtime_nanos":1783233052915220473,"mode":420,"is_dir":false},"packages/bot/dist/events/ready":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/events/memberEvents.d.ts.map":{"size":293,"mtime_nanos":1782854359070255782,"mode":420,"is_dir":false},"packages/bot/dist/commands/kick.d.ts":{"size":114,"mtime_nanos":1782854358967262796,"mode":420,"is_dir":false},"packages/bot/dist/commands/clearwarns.js":{"size":1608,"mtime_nanos":1782854358961263205,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/warnings.js.map":{"size":1789,"mtime_nanos":1783233052895220159,"mode":420,"is_dir":false},"packages/bot/dist/events/interactionCreate.js":{"size":1041,"mtime_nanos":1782854359054256871,"mode":420,"is_dir":false},"packages/bot/dist/commands/leaderboard.js":{"size":1635,"mtime_nanos":1782854358974262319,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/timeout.js":{"size":2894,"mtime_nanos":1783233052873219813,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings.d.ts.map":{"size":199,"mtime_nanos":1782854359004260275,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/unban.d.ts":{"size":117,"mtime_nanos":1783233052878219892,"mode":420,"is_dir":false},"packages/bot/dist/commands/automod/automod.d.ts.map":{"size":208,"mtime_nanos":1783233052812218854,"mode":420,"is_dir":false},"packages/bot/dist/commands/leaderboard.d.ts":{"size":128,"mtime_nanos":1782854358975262251,"mode":420,"is_dir":false},"packages/bot/.turbo/turbo-build.log":{"size":49,"mtime_nanos":1783233053029222265,"mode":420,"is_dir":false},"packages/bot/dist/commands/index.d.ts.map":{"size":254,"mtime_nanos":1783233052706217187,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/ban.d.ts.map":{"size":203,"mtime_nanos":1783233052847219404,"mode":420,"is_dir":false},"packages/bot/dist/events":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/events/message/messageCreate.js.map":{"size":6747,"mtime_nanos":1783233052954221086,"mode":420,"is_dir":false},"packages/bot/dist/commands/index.js.map":{"size":1701,"mtime_nanos":1783233052701217109,"mode":420,"is_dir":false},"packages/bot/dist/commands/settings/settings.js.map":{"size":6731,"mtime_nanos":1783233052910220395,"mode":420,"is_dir":false},"packages/bot/dist/events/messageCreate.js.map":{"size":5460,"mtime_nanos":1782854359083254897,"mode":420,"is_dir":false},"packages/bot/dist/events/ready/ready.d.ts.map":{"size":235,"mtime_nanos":1783233052963221228,"mode":420,"is_dir":false},"packages/bot/dist/commands/leveling/leaderboard.d.ts":{"size":129,"mtime_nanos":1783233052822219011,"mode":420,"is_dir":false},"packages/bot/dist/events/member/guildMemberAdd.js":{"size":884,"mtime_nanos":1783233052935220788,"mode":420,"is_dir":false},"packages/bot/dist/events/ready/ready.js.map":{"size":875,"mtime_nanos":1783233052963221228,"mode":420,"is_dir":false},"packages/bot/dist/utils/clientInstance.js.map":{"size":361,"mtime_nanos":1783233052737217675,"mode":420,"is_dir":false},"packages/bot/dist/utils/serverSettingsCache.js.map":{"size":894,"mtime_nanos":1783233052930220709,"mode":420,"is_dir":false},"packages/bot/dist/commands/ping.js":{"size":690,"mtime_nanos":1782854358979261978,"mode":420,"is_dir":false},"packages/bot/dist/events/guild/guildCreate.js.map":{"size":610,"mtime_nanos":1783233052920220552,"mode":420,"is_dir":false},"packages/bot/dist/commands/purge.d.ts.map":{"size":193,"mtime_nanos":1782854358984261638,"mode":420,"is_dir":false},"packages/bot/dist/commands/index.js":{"size":1510,"mtime_nanos":1783233052704217156,"mode":420,"is_dir":false},"packages/bot/dist/services":{"size":0,"mtime_nanos":0,"mode":0,"is_dir":true},"packages/bot/dist/commands/purge.js.map":{"size":1030,"mtime_nanos":1782854358983261706,"mode":420,"is_dir":false},"packages/bot/dist/events/interaction/interactionCreate.js":{"size":960,"mtime_nanos":1783233052924220615,"mode":420,"is_dir":false},"packages/bot/dist/commands/warn.js":{"size":4266,"mtime_nanos":1782854359030258505,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/timeout.d.ts.map":{"size":211,"mtime_nanos":1783233052874219829,"mode":420,"is_dir":false},"packages/bot/dist/commands/timeout.d.ts.map":{"size":197,"mtime_nanos":1782854359013259662,"mode":420,"is_dir":false},"packages/bot/dist/commands/clearwarns.d.ts":{"size":126,"mtime_nanos":1782854358962263137,"mode":420,"is_dir":false},"packages/bot/dist/events/member/guildMemberRemove.d.ts.map":{"size":266,"mtime_nanos":1783233052940220866,"mode":420,"is_dir":false},"packages/bot/dist/commands/moderation/purge.d.ts":{"size":117,"mtime_nanos":1783233052866219703,"mode":420,"is_dir":false},"packages/bot/dist/commands/warnings.d.ts.map":{"size":199,"mtime_nanos":1782854359036258096,"mode":420,"is_dir":false}},"order":["packages/bot/.turbo/turbo-build.log","packages/bot/dist","packages/bot/dist/commands","packages/bot/dist/commands/automod","packages/bot/dist/commands/automod/automod.d.ts","packages/bot/dist/commands/automod/automod.d.ts.map","packages/bot/dist/commands/automod/automod.js","packages/bot/dist/commands/automod/automod.js.map","packages/bot/dist/commands/automod.d.ts","packages/bot/dist/commands/automod.d.ts.map","packages/bot/dist/commands/automod.js","packages/bot/dist/commands/automod.js.map","packages/bot/dist/commands/ban.d.ts","packages/bot/dist/commands/ban.d.ts.map","packages/bot/dist/commands/ban.js","packages/bot/dist/commands/ban.js.map","packages/bot/dist/commands/clearwarns.d.ts","packages/bot/dist/commands/clearwarns.d.ts.map","packages/bot/dist/commands/clearwarns.js","packages/bot/dist/commands/clearwarns.js.map","packages/bot/dist/commands/command.d.ts","packages/bot/dist/commands/command.d.ts.map","packages/bot/dist/commands/command.js","packages/bot/dist/commands/command.js.map","packages/bot/dist/commands/index.d.ts","packages/bot/dist/commands/index.d.ts.map","packages/bot/dist/commands/index.js","packages/bot/dist/commands/index.js.map","packages/bot/dist/commands/kick.d.ts","packages/bot/dist/commands/kick.d.ts.map","packages/bot/dist/commands/kick.js","packages/bot/dist/commands/kick.js.map","packages/bot/dist/commands/leaderboard.d.ts","packages/bot/dist/commands/leaderboard.d.ts.map","packages/bot/dist/commands/leaderboard.js","packages/bot/dist/commands/leaderboard.js.map","packages/bot/dist/commands/leveling","packages/bot/dist/commands/leveling/leaderboard.d.ts","packages/bot/dist/commands/leveling/leaderboard.d.ts.map","packages/bot/dist/commands/leveling/leaderboard.js","packages/bot/dist/commands/leveling/leaderboard.js.map","packages/bot/dist/commands/leveling/rank.d.ts","packages/bot/dist/commands/leveling/rank.d.ts.map","packages/bot/dist/commands/leveling/rank.js","packages/bot/dist/commands/leveling/rank.js.map","packages/bot/dist/commands/moderation","packages/bot/dist/commands/moderation/ban.d.ts","packages/bot/dist/commands/moderation/ban.d.ts.map","packages/bot/dist/commands/moderation/ban.js","packages/bot/dist/commands/moderation/ban.js.map","packages/bot/dist/commands/moderation/clearwarns.d.ts","packages/bot/dist/commands/moderation/clearwarns.d.ts.map","packages/bot/dist/commands/moderation/clearwarns.js","packages/bot/dist/commands/moderation/clearwarns.js.map","packages/bot/dist/commands/moderation/kick.d.ts","packages/bot/dist/commands/moderation/kick.d.ts.map","packages/bot/dist/commands/moderation/kick.js","packages/bot/dist/commands/moderation/kick.js.map","packages/bot/dist/commands/moderation/purge.d.ts","packages/bot/dist/commands/moderation/purge.d.ts.map","packages/bot/dist/commands/moderation/purge.js","packages/bot/dist/commands/moderation/purge.js.map","packages/bot/dist/commands/moderation/timeout.d.ts","packages/bot/dist/commands/moderation/timeout.d.ts.map","packages/bot/dist/commands/moderation/timeout.js","packages/bot/dist/commands/moderation/timeout.js.map","packages/bot/dist/commands/moderation/unban.d.ts","packages/bot/dist/commands/moderation/unban.d.ts.map","packages/bot/dist/commands/moderation/unban.js","packages/bot/dist/commands/moderation/unban.js.map","packages/bot/dist/commands/moderation/untimeout.d.ts","packages/bot/dist/commands/moderation/untimeout.d.ts.map","packages/bot/dist/commands/moderation/untimeout.js","packages/bot/dist/commands/moderation/untimeout.js.map","packages/bot/dist/commands/moderation/warn.d.ts","packages/bot/dist/commands/moderation/warn.d.ts.map","packages/bot/dist/commands/moderation/warn.js","packages/bot/dist/commands/moderation/warn.js.map","packages/bot/dist/commands/moderation/warnings.d.ts","packages/bot/dist/commands/moderation/warnings.d.ts.map","packages/bot/dist/commands/moderation/warnings.js","packages/bot/dist/commands/moderation/warnings.js.map","packages/bot/dist/commands/ping.d.ts","packages/bot/dist/commands/ping.d.ts.map","packages/bot/dist/commands/ping.js","packages/bot/dist/commands/ping.js.map","packages/bot/dist/commands/purge.d.ts","packages/bot/dist/commands/purge.d.ts.map","packages/bot/dist/commands/purge.js","packages/bot/dist/commands/purge.js.map","packages/bot/dist/commands/rank.d.ts","packages/bot/dist/commands/rank.d.ts.map","packages/bot/dist/commands/rank.js","packages/bot/dist/commands/rank.js.map","packages/bot/dist/commands/settings","packages/bot/dist/commands/settings/settings.d.ts","packages/bot/dist/commands/settings/settings.d.ts.map","packages/bot/dist/commands/settings/settings.js","packages/bot/dist/commands/settings/settings.js.map","packages/bot/dist/commands/settings.d.ts","packages/bot/dist/commands/settings.d.ts.map","packages/bot/dist/commands/settings.js","packages/bot/dist/commands/settings.js.map","packages/bot/dist/commands/timeout.d.ts","packages/bot/dist/commands/timeout.d.ts.map","packages/bot/dist/commands/timeout.js","packages/bot/dist/commands/timeout.js.map","packages/bot/dist/commands/unban.d.ts","packages/bot/dist/commands/unban.d.ts.map","packages/bot/dist/commands/unban.js","packages/bot/dist/commands/unban.js.map","packages/bot/dist/commands/untimeout.d.ts","packages/bot/dist/commands/untimeout.d.ts.map","packages/bot/dist/commands/untimeout.js","packages/bot/dist/commands/untimeout.js.map","packages/bot/dist/commands/utility","packages/bot/dist/commands/utility/ping.d.ts","packages/bot/dist/commands/utility/ping.d.ts.map","packages/bot/dist/commands/utility/ping.js","packages/bot/dist/commands/utility/ping.js.map","packages/bot/dist/commands/warn.d.ts","packages/bot/dist/commands/warn.d.ts.map","packages/bot/dist/commands/warn.js","packages/bot/dist/commands/warn.js.map","packages/bot/dist/commands/warnings.d.ts","packages/bot/dist/commands/warnings.d.ts.map","packages/bot/dist/commands/warnings.js","packages/bot/dist/commands/warnings.js.map","packages/bot/dist/database","packages/bot/dist/database/client.d.ts","packages/bot/dist/database/client.d.ts.map","packages/bot/dist/database/client.js","packages/bot/dist/database/client.js.map","packages/bot/dist/deploy-commands.d.ts","packages/bot/dist/deploy-commands.d.ts.map","packages/bot/dist/deploy-commands.js","packages/bot/dist/deploy-commands.js.map","packages/bot/dist/env.d.ts","packages/bot/dist/env.d.ts.map","packages/bot/dist/env.js","packages/bot/dist/env.js.map","packages/bot/dist/events","packages/bot/dist/events/event.d.ts","packages/bot/dist/events/event.d.ts.map","packages/bot/dist/events/event.js","packages/bot/dist/events/event.js.map","packages/bot/dist/events/guild","packages/bot/dist/events/guild/guildCreate.d.ts","packages/bot/dist/events/guild/guildCreate.d.ts.map","packages/bot/dist/events/guild/guildCreate.js","packages/bot/dist/events/guild/guildCreate.js.map","packages/bot/dist/events/guildMemberAdd.d.ts","packages/bot/dist/events/guildMemberAdd.d.ts.map","packages/bot/dist/events/guildMemberAdd.js","packages/bot/dist/events/guildMemberAdd.js.map","packages/bot/dist/events/guildMemberRemove.d.ts","packages/bot/dist/events/guildMemberRemove.d.ts.map","packages/bot/dist/events/guildMemberRemove.js","packages/bot/dist/events/guildMemberRemove.js.map","packages/bot/dist/events/index.d.ts","packages/bot/dist/events/index.d.ts.map","packages/bot/dist/events/index.js","packages/bot/dist/events/index.js.map","packages/bot/dist/events/interaction","packages/bot/dist/events/interaction/interactionCreate.d.ts","packages/bot/dist/events/interaction/interactionCreate.d.ts.map","packages/bot/dist/events/interaction/interactionCreate.js","packages/bot/dist/events/interaction/interactionCreate.js.map","packages/bot/dist/events/interactionCreate.d.ts","packages/bot/dist/events/interactionCreate.d.ts.map","packages/bot/dist/events/interactionCreate.js","packages/bot/dist/events/interactionCreate.js.map","packages/bot/dist/events/member","packages/bot/dist/events/member/guildMemberAdd.d.ts","packages/bot/dist/events/member/guildMemberAdd.d.ts.map","packages/bot/dist/events/member/guildMemberAdd.js","packages/bot/dist/events/member/guildMemberAdd.js.map","packages/bot/dist/events/member/guildMemberRemove.d.ts","packages/bot/dist/events/member/guildMemberRemove.d.ts.map","packages/bot/dist/events/member/guildMemberRemove.js","packages/bot/dist/events/member/guildMemberRemove.js.map","packages/bot/dist/events/member/memberEvents.d.ts","packages/bot/dist/events/member/memberEvents.d.ts.map","packages/bot/dist/events/member/memberEvents.js","packages/bot/dist/events/member/memberEvents.js.map","packages/bot/dist/events/memberEvents.d.ts","packages/bot/dist/events/memberEvents.d.ts.map","packages/bot/dist/events/memberEvents.js","packages/bot/dist/events/memberEvents.js.map","packages/bot/dist/events/message","packages/bot/dist/events/message/messageCreate.d.ts","packages/bot/dist/events/message/messageCreate.d.ts.map","packages/bot/dist/events/message/messageCreate.js","packages/bot/dist/events/message/messageCreate.js.map","packages/bot/dist/events/messageCreate.d.ts","packages/bot/dist/events/messageCreate.d.ts.map","packages/bot/dist/events/messageCreate.js","packages/bot/dist/events/messageCreate.js.map","packages/bot/dist/events/ready","packages/bot/dist/events/ready/ready.d.ts","packages/bot/dist/events/ready/ready.d.ts.map","packages/bot/dist/events/ready/ready.js","packages/bot/dist/events/ready/ready.js.map","packages/bot/dist/events/ready.d.ts","packages/bot/dist/events/ready.d.ts.map","packages/bot/dist/events/ready.js","packages/bot/dist/events/ready.js.map","packages/bot/dist/index.d.ts","packages/bot/dist/index.d.ts.map","packages/bot/dist/index.js","packages/bot/dist/index.js.map","packages/bot/dist/services","packages/bot/dist/services/auditLog.d.ts","packages/bot/dist/services/auditLog.d.ts.map","packages/bot/dist/services/auditLog.js","packages/bot/dist/services/auditLog.js.map","packages/bot/dist/services/warnings.d.ts","packages/bot/dist/services/warnings.d.ts.map","packages/bot/dist/services/warnings.js","packages/bot/dist/services/warnings.js.map","packages/bot/dist/utils","packages/bot/dist/utils/clientInstance.d.ts","packages/bot/dist/utils/clientInstance.d.ts.map","packages/bot/dist/utils/clientInstance.js","packages/bot/dist/utils/clientInstance.js.map","packages/bot/dist/utils/hierarchy.d.ts","packages/bot/dist/utils/hierarchy.d.ts.map","packages/bot/dist/utils/hierarchy.js","packages/bot/dist/utils/hierarchy.js.map","packages/bot/dist/utils/serverSettingsCache.d.ts","packages/bot/dist/utils/serverSettingsCache.d.ts.map","packages/bot/dist/utils/serverSettingsCache.js","packages/bot/dist/utils/serverSettingsCache.js.map"]}
+{
+  "files": {
+    "packages/bot/dist/events/member/guildMemberAdd.d.ts": {
+      "size": 174,
+      "mtime_nanos": 1783233052936220803,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/env.js": {
+      "size": 684,
+      "mtime_nanos": 1783233052656216401,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/memberEvents.d.ts": {
+      "size": 294,
+      "mtime_nanos": 1782854359070255782,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/event.d.ts": {
+      "size": 254,
+      "mtime_nanos": 1783233052726217502,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guild/guildCreate.d.ts": {
+      "size": 162,
+      "mtime_nanos": 1783233052921220567,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/purge.js": {
+      "size": 1386,
+      "mtime_nanos": 1782854358983261706,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/hierarchy.d.ts": {
+      "size": 234,
+      "mtime_nanos": 1783233052841219310,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/utils/clientInstance.js": {
+      "size": 243,
+      "mtime_nanos": 1783233052737217675,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/untimeout.d.ts.map": {
+      "size": 203,
+      "mtime_nanos": 1782854359021259118,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/ban.js.map": {
+      "size": 1868,
+      "mtime_nanos": 1783233052846219388,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/env.d.ts": {
+      "size": 140,
+      "mtime_nanos": 1783233052676216716,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/index.d.ts.map": {
+      "size": 226,
+      "mtime_nanos": 1783233052735217643,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready/ready.d.ts": {
+      "size": 144,
+      "mtime_nanos": 1783233052963221228,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/memberEvents.js": {
+      "size": 1698,
+      "mtime_nanos": 1783087653034264012,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/warnings.d.ts": {
+      "size": 122,
+      "mtime_nanos": 1782854359037258028,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/serverSettingsCache.d.ts.map": {
+      "size": 319,
+      "mtime_nanos": 1783233052931220725,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings.js": {
+      "size": 9091,
+      "mtime_nanos": 1782854359003260343,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/purge.d.ts": {
+      "size": 116,
+      "mtime_nanos": 1782854358984261638,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/index.d.ts": {
+      "size": 150,
+      "mtime_nanos": 1783233052735217643,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leaderboard.d.ts.map": {
+      "size": 207,
+      "mtime_nanos": 1782854358975262251,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warn.js.map": {
+      "size": 3725,
+      "mtime_nanos": 1783233052890220080,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warn.d.ts.map": {
+      "size": 205,
+      "mtime_nanos": 1783233052891220096,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/interaction/interactionCreate.js.map": {
+      "size": 937,
+      "mtime_nanos": 1783233052924220615,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/memberEvents.d.ts.map": {
+      "size": 303,
+      "mtime_nanos": 1783087653045264233,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/purge.d.ts.map": {
+      "size": 207,
+      "mtime_nanos": 1783233052866219703,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/unban.d.ts.map": {
+      "size": 193,
+      "mtime_nanos": 1782854359017259390,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/guildMemberRemove.d.ts": {
+      "size": 186,
+      "mtime_nanos": 1783233052940220866,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/rank.d.ts": {
+      "size": 115,
+      "mtime_nanos": 1783233052827219090,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guildMemberRemove.js.map": {
+      "size": 853,
+      "mtime_nanos": 1782854359048257279,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/clientInstance.d.ts": {
+      "size": 178,
+      "mtime_nanos": 1783233052740217722,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/message/messageCreate.d.ts.map": {
+      "size": 257,
+      "mtime_nanos": 1783233052957221133,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/ban.js": {
+      "size": 1866,
+      "mtime_nanos": 1783233052846219388,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ban.d.ts.map": {
+      "size": 189,
+      "mtime_nanos": 1782854358948264091,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/events/interaction": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/events/interactionCreate.d.ts": {
+      "size": 185,
+      "mtime_nanos": 1782854359056256735,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/rank.js.map": {
+      "size": 1320,
+      "mtime_nanos": 1782854358988261365,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings/settings.d.ts": {
+      "size": 123,
+      "mtime_nanos": 1783233052912220426,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/interaction/interactionCreate.d.ts.map": {
+      "size": 271,
+      "mtime_nanos": 1783233052925220630,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/database": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/utils/hierarchy.d.ts.map": {
+      "size": 323,
+      "mtime_nanos": 1783233052841219310,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guildMemberAdd.d.ts.map": {
+      "size": 250,
+      "mtime_nanos": 1782854359044257552,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/clearwarns.d.ts": {
+      "size": 127,
+      "mtime_nanos": 1783233052858219577,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/ban.d.ts": {
+      "size": 113,
+      "mtime_nanos": 1783233052847219404,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/purge.js": {
+      "size": 1261,
+      "mtime_nanos": 1783233052865219687,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/memberEvents.d.ts": {
+      "size": 294,
+      "mtime_nanos": 1783087653045264233,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warn.js": {
+      "size": 4552,
+      "mtime_nanos": 1783233052890220080,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/memberEvents.js": {
+      "size": 1601,
+      "mtime_nanos": 1782854359062256326,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/serverSettingsCache.d.ts": {
+      "size": 263,
+      "mtime_nanos": 1783233052932220740,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/unban.d.ts": {
+      "size": 116,
+      "mtime_nanos": 1782854359017259390,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/timeout.d.ts": {
+      "size": 121,
+      "mtime_nanos": 1783233052874219829,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/database/client.d.ts": {
+      "size": 273,
+      "mtime_nanos": 1783233052802218697,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready.js.map": {
+      "size": 332,
+      "mtime_nanos": 1782854359086254693,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/untimeout.js.map": {
+      "size": 1680,
+      "mtime_nanos": 1783233052881219939,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warn.d.ts": {
+      "size": 115,
+      "mtime_nanos": 1783233052891220096,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/database/client.d.ts.map": {
+      "size": 236,
+      "mtime_nanos": 1783233052801218681,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/leaderboard.js": {
+      "size": 1510,
+      "mtime_nanos": 1783233052820218980,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/unban.js.map": {
+      "size": 1337,
+      "mtime_nanos": 1782854359015259526,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/warn.d.ts": {
+      "size": 114,
+      "mtime_nanos": 1782854359031258437,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/guildMemberAdd.js.map": {
+      "size": 912,
+      "mtime_nanos": 1783233052935220788,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready.d.ts": {
+      "size": 143,
+      "mtime_nanos": 1782854359088254556,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/warn.d.ts.map": {
+      "size": 191,
+      "mtime_nanos": 1782854359031258437,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/index.d.ts": {
+      "size": 51,
+      "mtime_nanos": 1783233052744217785,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/command.js": {
+      "size": 46,
+      "mtime_nanos": 1783233052679216763,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready/ready.js": {
+      "size": 887,
+      "mtime_nanos": 1783233052963221228,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/timeout.js.map": {
+      "size": 2537,
+      "mtime_nanos": 1782854359011259798,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/event.js.map": {
+      "size": 112,
+      "mtime_nanos": 1783233052721217423,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod/automod.d.ts": {
+      "size": 121,
+      "mtime_nanos": 1783233052812218854,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/warnings.js": {
+      "size": 2185,
+      "mtime_nanos": 1782854359035258164,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guild": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/events/guildMemberAdd.js": {
+      "size": 982,
+      "mtime_nanos": 1782854359042257688,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/unban.d.ts.map": {
+      "size": 207,
+      "mtime_nanos": 1783233052878219892,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/clearwarns.js": {
+      "size": 1626,
+      "mtime_nanos": 1783233052857219561,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/messageCreate.d.ts": {
+      "size": 169,
+      "mtime_nanos": 1782854359085254761,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ping.d.ts.map": {
+      "size": 190,
+      "mtime_nanos": 1782854358980261910,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guildMemberAdd.d.ts": {
+      "size": 173,
+      "mtime_nanos": 1782854359044257552,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ban.js.map": {
+      "size": 1615,
+      "mtime_nanos": 1782854358946264228,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/utility": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/index.d.ts.map": {
+      "size": 123,
+      "mtime_nanos": 1783233052744217785,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/hierarchy.js": {
+      "size": 1152,
+      "mtime_nanos": 1783233052840219294,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/leaderboard.js.map": {
+      "size": 1386,
+      "mtime_nanos": 1783233052819218964,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warnings.d.ts": {
+      "size": 123,
+      "mtime_nanos": 1783233052896220174,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/kick.js": {
+      "size": 1866,
+      "mtime_nanos": 1783233052860219608,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/rank.js": {
+      "size": 1488,
+      "mtime_nanos": 1783233052826219074,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/guildMemberAdd.d.ts.map": {
+      "size": 260,
+      "mtime_nanos": 1783233052936220803,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/rank.d.ts": {
+      "size": 114,
+      "mtime_nanos": 1782854358990261229,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/kick.d.ts.map": {
+      "size": 191,
+      "mtime_nanos": 1782854358967262796,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings.js.map": {
+      "size": 6626,
+      "mtime_nanos": 1782854359002260411,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/leaderboard.d.ts.map": {
+      "size": 219,
+      "mtime_nanos": 1783233052821218995,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guildMemberRemove.d.ts.map": {
+      "size": 256,
+      "mtime_nanos": 1782854359050257143,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/message/messageCreate.d.ts": {
+      "size": 170,
+      "mtime_nanos": 1783233052957221133,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/events/message/messageCreate.js": {
+      "size": 9171,
+      "mtime_nanos": 1783233052955221102,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/kick.js.map": {
+      "size": 1821,
+      "mtime_nanos": 1783233052860219608,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings.d.ts": {
+      "size": 122,
+      "mtime_nanos": 1782854359004260275,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services/auditLog.js.map": {
+      "size": 2272,
+      "mtime_nanos": 1783233052833219184,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/purge.js.map": {
+      "size": 1155,
+      "mtime_nanos": 1783233052865219687,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/clearwarns.js.map": {
+      "size": 1193,
+      "mtime_nanos": 1782854358961263205,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/command.d.ts": {
+      "size": 388,
+      "mtime_nanos": 1783233052684216842,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/untimeout.js": {
+      "size": 1923,
+      "mtime_nanos": 1782854359020259186,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ping.d.ts": {
+      "size": 114,
+      "mtime_nanos": 1782854358980261910,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod.js.map": {
+      "size": 1985,
+      "mtime_nanos": 1782854358922265864,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/untimeout.js.map": {
+      "size": 1448,
+      "mtime_nanos": 1782854359020259186,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ping.js.map": {
+      "size": 563,
+      "mtime_nanos": 1782854358979261978,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/index.js": {
+      "size": 1045,
+      "mtime_nanos": 1783233052743217769,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/command.d.ts.map": {
+      "size": 350,
+      "mtime_nanos": 1783233052683216826,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warnings.js": {
+      "size": 2072,
+      "mtime_nanos": 1783233052895220159,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings/settings.d.ts.map": {
+      "size": 211,
+      "mtime_nanos": 1783233052911220410,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod.d.ts.map": {
+      "size": 197,
+      "mtime_nanos": 1782854358925265659,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/clearwarns.js.map": {
+      "size": 1452,
+      "mtime_nanos": 1783233052857219561,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/untimeout.d.ts.map": {
+      "size": 217,
+      "mtime_nanos": 1783233052883219970,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warnings.d.ts.map": {
+      "size": 213,
+      "mtime_nanos": 1783233052896220174,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod.js": {
+      "size": 2780,
+      "mtime_nanos": 1782854358923265795,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/untimeout.d.ts": {
+      "size": 125,
+      "mtime_nanos": 1783233052883219970,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/deploy-commands.d.ts": {
+      "size": 61,
+      "mtime_nanos": 1783233052716217345,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod/automod.js.map": {
+      "size": 2077,
+      "mtime_nanos": 1783233052810218822,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/deploy-commands.d.ts.map": {
+      "size": 143,
+      "mtime_nanos": 1783233052715217329,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/interaction/interactionCreate.d.ts": {
+      "size": 186,
+      "mtime_nanos": 1783233052925220630,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/interactionCreate.d.ts.map": {
+      "size": 256,
+      "mtime_nanos": 1782854359056256735,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/kick.d.ts": {
+      "size": 115,
+      "mtime_nanos": 1783233052862219640,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/warn.js.map": {
+      "size": 3206,
+      "mtime_nanos": 1782854359030258505,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/unban.js": {
+      "size": 1789,
+      "mtime_nanos": 1782854359016259458,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services/warnings.d.ts.map": {
+      "size": 816,
+      "mtime_nanos": 1783233052854219514,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/clientInstance.d.ts.map": {
+      "size": 247,
+      "mtime_nanos": 1783233052740217722,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/database/client.js": {
+      "size": 310,
+      "mtime_nanos": 1783233052747217832,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/serverSettingsCache.js": {
+      "size": 665,
+      "mtime_nanos": 1783233052930220709,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod/automod.js": {
+      "size": 2659,
+      "mtime_nanos": 1783233052810218822,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/hierarchy.js.map": {
+      "size": 1038,
+      "mtime_nanos": 1783233052840219294,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/event.d.ts.map": {
+      "size": 371,
+      "mtime_nanos": 1783233052725217486,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/event.js": {
+      "size": 44,
+      "mtime_nanos": 1783233052721217423,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/memberEvents.js.map": {
+      "size": 1521,
+      "mtime_nanos": 1783087653034264012,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services/auditLog.d.ts": {
+      "size": 313,
+      "mtime_nanos": 1783233052836219231,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/kick.js": {
+      "size": 1860,
+      "mtime_nanos": 1782854358966262865,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/services/warnings.js": {
+      "size": 1269,
+      "mtime_nanos": 1783233052850219451,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/interactionCreate.js.map": {
+      "size": 890,
+      "mtime_nanos": 1782854359054256871,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready.d.ts.map": {
+      "size": 225,
+      "mtime_nanos": 1782854359087254625,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/utility/ping.d.ts.map": {
+      "size": 201,
+      "mtime_nanos": 1783233052914220457,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/guildMemberRemove.js.map": {
+      "size": 925,
+      "mtime_nanos": 1783233052939220850,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/commands/index.d.ts": {
+      "size": 182,
+      "mtime_nanos": 1783233052708217219,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod.d.ts": {
+      "size": 120,
+      "mtime_nanos": 1782854358925265659,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/timeout.js": {
+      "size": 2879,
+      "mtime_nanos": 1782854359012259730,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/untimeout.d.ts": {
+      "size": 124,
+      "mtime_nanos": 1782854359021259118,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/events/index.js": {
+      "size": 1629,
+      "mtime_nanos": 1783233052733217612,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/message": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/commands/rank.d.ts.map": {
+      "size": 191,
+      "mtime_nanos": 1782854358990261229,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/kick.d.ts.map": {
+      "size": 205,
+      "mtime_nanos": 1783233052861219624,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/guildMemberRemove.js": {
+      "size": 900,
+      "mtime_nanos": 1783233052939220850,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/commands/warnings.js.map": {
+      "size": 1700,
+      "mtime_nanos": 1782854359035258164,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/database/client.js.map": {
+      "size": 403,
+      "mtime_nanos": 1783233052746217816,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/commands/moderation/unban.js": {
+      "size": 1664,
+      "mtime_nanos": 1783233052877219876,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services/warnings.js.map": {
+      "size": 1344,
+      "mtime_nanos": 1783233052850219451,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/timeout.js.map": {
+      "size": 2793,
+      "mtime_nanos": 1783233052873219813,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/rank.js": {
+      "size": 1606,
+      "mtime_nanos": 1782854358988261365,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/deploy-commands.js": {
+      "size": 709,
+      "mtime_nanos": 1783233052713217298,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guild/guildCreate.js": {
+      "size": 558,
+      "mtime_nanos": 1783233052920220552,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/command.js.map": {
+      "size": 118,
+      "mtime_nanos": 1783233052678216747,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/messageCreate.js": {
+      "size": 7605,
+      "mtime_nanos": 1782854359083254897,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guildMemberRemove.d.ts": {
+      "size": 185,
+      "mtime_nanos": 1782854359050257143,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guildMemberAdd.js.map": {
+      "size": 840,
+      "mtime_nanos": 1782854359042257688,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/index.js.map": {
+      "size": 1893,
+      "mtime_nanos": 1783233052733217612,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/kick.js.map": {
+      "size": 1568,
+      "mtime_nanos": 1782854358966262865,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings/settings.js": {
+      "size": 8979,
+      "mtime_nanos": 1783233052910220395,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guild/guildCreate.d.ts.map": {
+      "size": 251,
+      "mtime_nanos": 1783233052921220567,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ban.d.ts": {
+      "size": 112,
+      "mtime_nanos": 1782854358949264023,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/timeout.d.ts": {
+      "size": 120,
+      "mtime_nanos": 1782854359013259662,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/rank.d.ts.map": {
+      "size": 203,
+      "mtime_nanos": 1783233052827219090,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/untimeout.js": {
+      "size": 1948,
+      "mtime_nanos": 1783233052882219954,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/rank.js.map": {
+      "size": 1400,
+      "mtime_nanos": 1783233052826219074,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/utility/ping.js.map": {
+      "size": 612,
+      "mtime_nanos": 1783233052913220442,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/deploy-commands.js.map": {
+      "size": 882,
+      "mtime_nanos": 1783233052713217298,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/memberEvents.js.map": {
+      "size": 1429,
+      "mtime_nanos": 1782854359062256326,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/unban.js.map": {
+      "size": 1453,
+      "mtime_nanos": 1783233052877219876,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/messageCreate.d.ts.map": {
+      "size": 246,
+      "mtime_nanos": 1782854359084254829,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/env.js.map": {
+      "size": 962,
+      "mtime_nanos": 1783233052655216386,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guildMemberRemove.js": {
+      "size": 997,
+      "mtime_nanos": 1782854359049257211,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leaderboard.js.map": {
+      "size": 1306,
+      "mtime_nanos": 1782854358973262387,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services/warnings.d.ts": {
+      "size": 673,
+      "mtime_nanos": 1783233052854219514,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/env.d.ts.map": {
+      "size": 133,
+      "mtime_nanos": 1783233052676216716,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/index.js.map": {
+      "size": 849,
+      "mtime_nanos": 1783233052742217753,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services/auditLog.d.ts.map": {
+      "size": 435,
+      "mtime_nanos": 1783233052836219231,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready.js": {
+      "size": 312,
+      "mtime_nanos": 1782854359086254693,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services/auditLog.js": {
+      "size": 2637,
+      "mtime_nanos": 1783233052833219184,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/clearwarns.d.ts.map": {
+      "size": 219,
+      "mtime_nanos": 1783233052858219577,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ban.js": {
+      "size": 1856,
+      "mtime_nanos": 1782854358946264228,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/utility/ping.js": {
+      "size": 581,
+      "mtime_nanos": 1783233052913220442,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/clearwarns.d.ts.map": {
+      "size": 205,
+      "mtime_nanos": 1782854358962263137,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/utility/ping.d.ts": {
+      "size": 115,
+      "mtime_nanos": 1783233052915220473,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/events/memberEvents.d.ts.map": {
+      "size": 293,
+      "mtime_nanos": 1782854359070255782,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/kick.d.ts": {
+      "size": 114,
+      "mtime_nanos": 1782854358967262796,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/clearwarns.js": {
+      "size": 1608,
+      "mtime_nanos": 1782854358961263205,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/warnings.js.map": {
+      "size": 1789,
+      "mtime_nanos": 1783233052895220159,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/interactionCreate.js": {
+      "size": 1041,
+      "mtime_nanos": 1782854359054256871,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leaderboard.js": {
+      "size": 1635,
+      "mtime_nanos": 1782854358974262319,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/timeout.js": {
+      "size": 2894,
+      "mtime_nanos": 1783233052873219813,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings.d.ts.map": {
+      "size": 199,
+      "mtime_nanos": 1782854359004260275,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/unban.d.ts": {
+      "size": 117,
+      "mtime_nanos": 1783233052878219892,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/automod/automod.d.ts.map": {
+      "size": 208,
+      "mtime_nanos": 1783233052812218854,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leaderboard.d.ts": {
+      "size": 128,
+      "mtime_nanos": 1782854358975262251,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/.turbo/turbo-build.log": {
+      "size": 49,
+      "mtime_nanos": 1783233053029222265,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/index.d.ts.map": {
+      "size": 254,
+      "mtime_nanos": 1783233052706217187,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/ban.d.ts.map": {
+      "size": 203,
+      "mtime_nanos": 1783233052847219404,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/events/message/messageCreate.js.map": {
+      "size": 6747,
+      "mtime_nanos": 1783233052954221086,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/index.js.map": {
+      "size": 1701,
+      "mtime_nanos": 1783233052701217109,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/settings/settings.js.map": {
+      "size": 6731,
+      "mtime_nanos": 1783233052910220395,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/messageCreate.js.map": {
+      "size": 5460,
+      "mtime_nanos": 1782854359083254897,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready/ready.d.ts.map": {
+      "size": 235,
+      "mtime_nanos": 1783233052963221228,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/leveling/leaderboard.d.ts": {
+      "size": 129,
+      "mtime_nanos": 1783233052822219011,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/guildMemberAdd.js": {
+      "size": 884,
+      "mtime_nanos": 1783233052935220788,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/ready/ready.js.map": {
+      "size": 875,
+      "mtime_nanos": 1783233052963221228,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/clientInstance.js.map": {
+      "size": 361,
+      "mtime_nanos": 1783233052737217675,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/utils/serverSettingsCache.js.map": {
+      "size": 894,
+      "mtime_nanos": 1783233052930220709,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/ping.js": {
+      "size": 690,
+      "mtime_nanos": 1782854358979261978,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/guild/guildCreate.js.map": {
+      "size": 610,
+      "mtime_nanos": 1783233052920220552,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/purge.d.ts.map": {
+      "size": 193,
+      "mtime_nanos": 1782854358984261638,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/index.js": {
+      "size": 1510,
+      "mtime_nanos": 1783233052704217156,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/services": {
+      "size": 0,
+      "mtime_nanos": 0,
+      "mode": 0,
+      "is_dir": true
+    },
+    "packages/bot/dist/commands/purge.js.map": {
+      "size": 1030,
+      "mtime_nanos": 1782854358983261706,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/interaction/interactionCreate.js": {
+      "size": 960,
+      "mtime_nanos": 1783233052924220615,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/warn.js": {
+      "size": 4266,
+      "mtime_nanos": 1782854359030258505,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/timeout.d.ts.map": {
+      "size": 211,
+      "mtime_nanos": 1783233052874219829,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/timeout.d.ts.map": {
+      "size": 197,
+      "mtime_nanos": 1782854359013259662,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/clearwarns.d.ts": {
+      "size": 126,
+      "mtime_nanos": 1782854358962263137,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/events/member/guildMemberRemove.d.ts.map": {
+      "size": 266,
+      "mtime_nanos": 1783233052940220866,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/moderation/purge.d.ts": {
+      "size": 117,
+      "mtime_nanos": 1783233052866219703,
+      "mode": 420,
+      "is_dir": false
+    },
+    "packages/bot/dist/commands/warnings.d.ts.map": {
+      "size": 199,
+      "mtime_nanos": 1782854359036258096,
+      "mode": 420,
+      "is_dir": false
+    }
+  },
+  "order": [
+    "packages/bot/.turbo/turbo-build.log",
+    "packages/bot/dist",
+    "packages/bot/dist/commands",
+    "packages/bot/dist/commands/automod",
+    "packages/bot/dist/commands/automod/automod.d.ts",
+    "packages/bot/dist/commands/automod/automod.d.ts.map",
+    "packages/bot/dist/commands/automod/automod.js",
+    "packages/bot/dist/commands/automod/automod.js.map",
+    "packages/bot/dist/commands/automod.d.ts",
+    "packages/bot/dist/commands/automod.d.ts.map",
+    "packages/bot/dist/commands/automod.js",
+    "packages/bot/dist/commands/automod.js.map",
+    "packages/bot/dist/commands/ban.d.ts",
+    "packages/bot/dist/commands/ban.d.ts.map",
+    "packages/bot/dist/commands/ban.js",
+    "packages/bot/dist/commands/ban.js.map",
+    "packages/bot/dist/commands/clearwarns.d.ts",
+    "packages/bot/dist/commands/clearwarns.d.ts.map",
+    "packages/bot/dist/commands/clearwarns.js",
+    "packages/bot/dist/commands/clearwarns.js.map",
+    "packages/bot/dist/commands/command.d.ts",
+    "packages/bot/dist/commands/command.d.ts.map",
+    "packages/bot/dist/commands/command.js",
+    "packages/bot/dist/commands/command.js.map",
+    "packages/bot/dist/commands/index.d.ts",
+    "packages/bot/dist/commands/index.d.ts.map",
+    "packages/bot/dist/commands/index.js",
+    "packages/bot/dist/commands/index.js.map",
+    "packages/bot/dist/commands/kick.d.ts",
+    "packages/bot/dist/commands/kick.d.ts.map",
+    "packages/bot/dist/commands/kick.js",
+    "packages/bot/dist/commands/kick.js.map",
+    "packages/bot/dist/commands/leaderboard.d.ts",
+    "packages/bot/dist/commands/leaderboard.d.ts.map",
+    "packages/bot/dist/commands/leaderboard.js",
+    "packages/bot/dist/commands/leaderboard.js.map",
+    "packages/bot/dist/commands/leveling",
+    "packages/bot/dist/commands/leveling/leaderboard.d.ts",
+    "packages/bot/dist/commands/leveling/leaderboard.d.ts.map",
+    "packages/bot/dist/commands/leveling/leaderboard.js",
+    "packages/bot/dist/commands/leveling/leaderboard.js.map",
+    "packages/bot/dist/commands/leveling/rank.d.ts",
+    "packages/bot/dist/commands/leveling/rank.d.ts.map",
+    "packages/bot/dist/commands/leveling/rank.js",
+    "packages/bot/dist/commands/leveling/rank.js.map",
+    "packages/bot/dist/commands/moderation",
+    "packages/bot/dist/commands/moderation/ban.d.ts",
+    "packages/bot/dist/commands/moderation/ban.d.ts.map",
+    "packages/bot/dist/commands/moderation/ban.js",
+    "packages/bot/dist/commands/moderation/ban.js.map",
+    "packages/bot/dist/commands/moderation/clearwarns.d.ts",
+    "packages/bot/dist/commands/moderation/clearwarns.d.ts.map",
+    "packages/bot/dist/commands/moderation/clearwarns.js",
+    "packages/bot/dist/commands/moderation/clearwarns.js.map",
+    "packages/bot/dist/commands/moderation/kick.d.ts",
+    "packages/bot/dist/commands/moderation/kick.d.ts.map",
+    "packages/bot/dist/commands/moderation/kick.js",
+    "packages/bot/dist/commands/moderation/kick.js.map",
+    "packages/bot/dist/commands/moderation/purge.d.ts",
+    "packages/bot/dist/commands/moderation/purge.d.ts.map",
+    "packages/bot/dist/commands/moderation/purge.js",
+    "packages/bot/dist/commands/moderation/purge.js.map",
+    "packages/bot/dist/commands/moderation/timeout.d.ts",
+    "packages/bot/dist/commands/moderation/timeout.d.ts.map",
+    "packages/bot/dist/commands/moderation/timeout.js",
+    "packages/bot/dist/commands/moderation/timeout.js.map",
+    "packages/bot/dist/commands/moderation/unban.d.ts",
+    "packages/bot/dist/commands/moderation/unban.d.ts.map",
+    "packages/bot/dist/commands/moderation/unban.js",
+    "packages/bot/dist/commands/moderation/unban.js.map",
+    "packages/bot/dist/commands/moderation/untimeout.d.ts",
+    "packages/bot/dist/commands/moderation/untimeout.d.ts.map",
+    "packages/bot/dist/commands/moderation/untimeout.js",
+    "packages/bot/dist/commands/moderation/untimeout.js.map",
+    "packages/bot/dist/commands/moderation/warn.d.ts",
+    "packages/bot/dist/commands/moderation/warn.d.ts.map",
+    "packages/bot/dist/commands/moderation/warn.js",
+    "packages/bot/dist/commands/moderation/warn.js.map",
+    "packages/bot/dist/commands/moderation/warnings.d.ts",
+    "packages/bot/dist/commands/moderation/warnings.d.ts.map",
+    "packages/bot/dist/commands/moderation/warnings.js",
+    "packages/bot/dist/commands/moderation/warnings.js.map",
+    "packages/bot/dist/commands/ping.d.ts",
+    "packages/bot/dist/commands/ping.d.ts.map",
+    "packages/bot/dist/commands/ping.js",
+    "packages/bot/dist/commands/ping.js.map",
+    "packages/bot/dist/commands/purge.d.ts",
+    "packages/bot/dist/commands/purge.d.ts.map",
+    "packages/bot/dist/commands/purge.js",
+    "packages/bot/dist/commands/purge.js.map",
+    "packages/bot/dist/commands/rank.d.ts",
+    "packages/bot/dist/commands/rank.d.ts.map",
+    "packages/bot/dist/commands/rank.js",
+    "packages/bot/dist/commands/rank.js.map",
+    "packages/bot/dist/commands/settings",
+    "packages/bot/dist/commands/settings/settings.d.ts",
+    "packages/bot/dist/commands/settings/settings.d.ts.map",
+    "packages/bot/dist/commands/settings/settings.js",
+    "packages/bot/dist/commands/settings/settings.js.map",
+    "packages/bot/dist/commands/settings.d.ts",
+    "packages/bot/dist/commands/settings.d.ts.map",
+    "packages/bot/dist/commands/settings.js",
+    "packages/bot/dist/commands/settings.js.map",
+    "packages/bot/dist/commands/timeout.d.ts",
+    "packages/bot/dist/commands/timeout.d.ts.map",
+    "packages/bot/dist/commands/timeout.js",
+    "packages/bot/dist/commands/timeout.js.map",
+    "packages/bot/dist/commands/unban.d.ts",
+    "packages/bot/dist/commands/unban.d.ts.map",
+    "packages/bot/dist/commands/unban.js",
+    "packages/bot/dist/commands/unban.js.map",
+    "packages/bot/dist/commands/untimeout.d.ts",
+    "packages/bot/dist/commands/untimeout.d.ts.map",
+    "packages/bot/dist/commands/untimeout.js",
+    "packages/bot/dist/commands/untimeout.js.map",
+    "packages/bot/dist/commands/utility",
+    "packages/bot/dist/commands/utility/ping.d.ts",
+    "packages/bot/dist/commands/utility/ping.d.ts.map",
+    "packages/bot/dist/commands/utility/ping.js",
+    "packages/bot/dist/commands/utility/ping.js.map",
+    "packages/bot/dist/commands/warn.d.ts",
+    "packages/bot/dist/commands/warn.d.ts.map",
+    "packages/bot/dist/commands/warn.js",
+    "packages/bot/dist/commands/warn.js.map",
+    "packages/bot/dist/commands/warnings.d.ts",
+    "packages/bot/dist/commands/warnings.d.ts.map",
+    "packages/bot/dist/commands/warnings.js",
+    "packages/bot/dist/commands/warnings.js.map",
+    "packages/bot/dist/database",
+    "packages/bot/dist/database/client.d.ts",
+    "packages/bot/dist/database/client.d.ts.map",
+    "packages/bot/dist/database/client.js",
+    "packages/bot/dist/database/client.js.map",
+    "packages/bot/dist/deploy-commands.d.ts",
+    "packages/bot/dist/deploy-commands.d.ts.map",
+    "packages/bot/dist/deploy-commands.js",
+    "packages/bot/dist/deploy-commands.js.map",
+    "packages/bot/dist/env.d.ts",
+    "packages/bot/dist/env.d.ts.map",
+    "packages/bot/dist/env.js",
+    "packages/bot/dist/env.js.map",
+    "packages/bot/dist/events",
+    "packages/bot/dist/events/event.d.ts",
+    "packages/bot/dist/events/event.d.ts.map",
+    "packages/bot/dist/events/event.js",
+    "packages/bot/dist/events/event.js.map",
+    "packages/bot/dist/events/guild",
+    "packages/bot/dist/events/guild/guildCreate.d.ts",
+    "packages/bot/dist/events/guild/guildCreate.d.ts.map",
+    "packages/bot/dist/events/guild/guildCreate.js",
+    "packages/bot/dist/events/guild/guildCreate.js.map",
+    "packages/bot/dist/events/guildMemberAdd.d.ts",
+    "packages/bot/dist/events/guildMemberAdd.d.ts.map",
+    "packages/bot/dist/events/guildMemberAdd.js",
+    "packages/bot/dist/events/guildMemberAdd.js.map",
+    "packages/bot/dist/events/guildMemberRemove.d.ts",
+    "packages/bot/dist/events/guildMemberRemove.d.ts.map",
+    "packages/bot/dist/events/guildMemberRemove.js",
+    "packages/bot/dist/events/guildMemberRemove.js.map",
+    "packages/bot/dist/events/index.d.ts",
+    "packages/bot/dist/events/index.d.ts.map",
+    "packages/bot/dist/events/index.js",
+    "packages/bot/dist/events/index.js.map",
+    "packages/bot/dist/events/interaction",
+    "packages/bot/dist/events/interaction/interactionCreate.d.ts",
+    "packages/bot/dist/events/interaction/interactionCreate.d.ts.map",
+    "packages/bot/dist/events/interaction/interactionCreate.js",
+    "packages/bot/dist/events/interaction/interactionCreate.js.map",
+    "packages/bot/dist/events/interactionCreate.d.ts",
+    "packages/bot/dist/events/interactionCreate.d.ts.map",
+    "packages/bot/dist/events/interactionCreate.js",
+    "packages/bot/dist/events/interactionCreate.js.map",
+    "packages/bot/dist/events/member",
+    "packages/bot/dist/events/member/guildMemberAdd.d.ts",
+    "packages/bot/dist/events/member/guildMemberAdd.d.ts.map",
+    "packages/bot/dist/events/member/guildMemberAdd.js",
+    "packages/bot/dist/events/member/guildMemberAdd.js.map",
+    "packages/bot/dist/events/member/guildMemberRemove.d.ts",
+    "packages/bot/dist/events/member/guildMemberRemove.d.ts.map",
+    "packages/bot/dist/events/member/guildMemberRemove.js",
+    "packages/bot/dist/events/member/guildMemberRemove.js.map",
+    "packages/bot/dist/events/member/memberEvents.d.ts",
+    "packages/bot/dist/events/member/memberEvents.d.ts.map",
+    "packages/bot/dist/events/member/memberEvents.js",
+    "packages/bot/dist/events/member/memberEvents.js.map",
+    "packages/bot/dist/events/memberEvents.d.ts",
+    "packages/bot/dist/events/memberEvents.d.ts.map",
+    "packages/bot/dist/events/memberEvents.js",
+    "packages/bot/dist/events/memberEvents.js.map",
+    "packages/bot/dist/events/message",
+    "packages/bot/dist/events/message/messageCreate.d.ts",
+    "packages/bot/dist/events/message/messageCreate.d.ts.map",
+    "packages/bot/dist/events/message/messageCreate.js",
+    "packages/bot/dist/events/message/messageCreate.js.map",
+    "packages/bot/dist/events/messageCreate.d.ts",
+    "packages/bot/dist/events/messageCreate.d.ts.map",
+    "packages/bot/dist/events/messageCreate.js",
+    "packages/bot/dist/events/messageCreate.js.map",
+    "packages/bot/dist/events/ready",
+    "packages/bot/dist/events/ready/ready.d.ts",
+    "packages/bot/dist/events/ready/ready.d.ts.map",
+    "packages/bot/dist/events/ready/ready.js",
+    "packages/bot/dist/events/ready/ready.js.map",
+    "packages/bot/dist/events/ready.d.ts",
+    "packages/bot/dist/events/ready.d.ts.map",
+    "packages/bot/dist/events/ready.js",
+    "packages/bot/dist/events/ready.js.map",
+    "packages/bot/dist/index.d.ts",
+    "packages/bot/dist/index.d.ts.map",
+    "packages/bot/dist/index.js",
+    "packages/bot/dist/index.js.map",
+    "packages/bot/dist/services",
+    "packages/bot/dist/services/auditLog.d.ts",
+    "packages/bot/dist/services/auditLog.d.ts.map",
+    "packages/bot/dist/services/auditLog.js",
+    "packages/bot/dist/services/auditLog.js.map",
+    "packages/bot/dist/services/warnings.d.ts",
+    "packages/bot/dist/services/warnings.d.ts.map",
+    "packages/bot/dist/services/warnings.js",
+    "packages/bot/dist/services/warnings.js.map",
+    "packages/bot/dist/utils",
+    "packages/bot/dist/utils/clientInstance.d.ts",
+    "packages/bot/dist/utils/clientInstance.d.ts.map",
+    "packages/bot/dist/utils/clientInstance.js",
+    "packages/bot/dist/utils/clientInstance.js.map",
+    "packages/bot/dist/utils/hierarchy.d.ts",
+    "packages/bot/dist/utils/hierarchy.d.ts.map",
+    "packages/bot/dist/utils/hierarchy.js",
+    "packages/bot/dist/utils/hierarchy.js.map",
+    "packages/bot/dist/utils/serverSettingsCache.d.ts",
+    "packages/bot/dist/utils/serverSettingsCache.d.ts.map",
+    "packages/bot/dist/utils/serverSettingsCache.js",
+    "packages/bot/dist/utils/serverSettingsCache.js.map"
+  ]
+}

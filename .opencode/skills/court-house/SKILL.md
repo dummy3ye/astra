@@ -14,13 +14,13 @@ This is a **multi-agent judicial workflow**. You are the **Court Clerk**. Your j
 
 ## Officers of the Court
 
-| Role | Agent | Duty |
-|---|---|---|
-| 🧙 Court Wizard | `@wizard` | Brainstorming — conjures creative approaches and possibilities |
-| 👤 Chief Court Researcher | `@researcher` | Harsh interrogation — extracts clear intent from vague user input |
-| 🔬 Forensic Architect | `@court-researcher` | Deep analysis — scrutinizes every aspect of the plan against the codebase |
-| 📋 Court Reporter | `@court-reporter` | Neutral synthesis — compiles all findings into a single Court Report |
-| ⚖️ Presiding Judge | `@judge` | Final authority — enforces 90% detail rule, writes verdict |
+| Role                      | Agent               | Duty                                                                      |
+| ------------------------- | ------------------- | ------------------------------------------------------------------------- |
+| 🧙 Court Wizard           | `@wizard`           | Brainstorming — conjures creative approaches and possibilities            |
+| 👤 Chief Court Researcher | `@researcher`       | Harsh interrogation — extracts clear intent from vague user input         |
+| 🔬 Forensic Architect     | `@court-researcher` | Deep analysis — scrutinizes every aspect of the plan against the codebase |
+| 📋 Court Reporter         | `@court-reporter`   | Neutral synthesis — compiles all findings into a single Court Report      |
+| ⚖️ Presiding Judge        | `@judge`            | Final authority — enforces 90% detail rule, writes verdict                |
 
 ## Rules of Procedure
 
@@ -64,6 +64,7 @@ Present the Court Report to the user. Invite them to defend any ❌ OBJECTIONS. 
 Pass the complete case record (Research Summary + Court Research Report + Court Report + Defense Record) to `@judge`.
 
 The judge will:
+
 1. Apply the **90% Detail Rule** — reject any plan with vague or missing specifications
 2. Either **APPROVE** (write to `plans.md`), **REJECT** (with specific reasons), or **REMAND** (with fix instructions)
 
@@ -75,12 +76,15 @@ After the judge passes judgment, append a case record to `plans.md`:
 
 ```markdown
 ## Case #{date} — {case name}
+
 **Verdict**: APPROVED / REJECTED / REMANDED
 **Phase**: Complete
 
 ### Key Decisions
+
 - ...
 
 ### Files Changed
+
 - ...
 ```
