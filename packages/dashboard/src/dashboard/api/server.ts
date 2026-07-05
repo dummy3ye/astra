@@ -1,12 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
 import cors from 'cors';
 import helmet from 'helmet';
-import { RateLimiterMemory } from 'rate-limiter-flexible';
 import { prisma } from './database/client';
-import { AuditActions } from '@gallium/shared';
-import nodemailer from 'nodemailer';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -35,13 +31,6 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// Rate limiter
-const rateLimiter = new RateLimiterMemory({
-  keyGenerator: (req) => req.ip || 'unknown',
-  points: 10,
-  duration: 60,
-});
-
 // Authentication middleware
 const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
   const token = req.headers.authorization?.split(' ')[1];
@@ -53,7 +42,7 @@ const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
     const decoded = jwt.verify(token, JWT_SECRET) as any;
     (req as any).user = decoded;
     next();
-  } catch (error) {
+  } catch {
     return res.status(403).json({ error: 'Invalid token.' });
   }
 };
@@ -74,7 +63,7 @@ app.post('/api/auth/login', async (req, res) => {
     } else {
       res.status(401).json({ error: 'Invalid credentials.' });
     }
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Internal server error.' });
   }
 });
@@ -340,7 +329,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
   console.error(err.stack);
   res.status(500).json({
     error: 'Internal server error.',

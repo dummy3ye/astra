@@ -99,7 +99,7 @@ export function createApp(opts?: { databaseUrl?: string; prisma?: PrismaClient }
         return { status: 500 as const, body: { error: 'Failed to fetch stats' } };
       }
     },
-    getServers: async ({ query }) => {
+    getServers: async () => {
       try {
         const servers = await prisma.serverSettings.findMany();
         const enriched = await Promise.all(

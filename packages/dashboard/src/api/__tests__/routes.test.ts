@@ -4,7 +4,6 @@ import type { PrismaClient } from '@prisma/client';
 import { createApp } from '../app';
 
 function mockPrisma(): PrismaClient {
-  const now = new Date();
   return {
     user: {
       count: vi.fn().mockResolvedValue(42),
