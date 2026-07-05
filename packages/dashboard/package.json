@@ -1,7 +1,8 @@
 {
-  "name": "@gallium/dashboard",
+  "name": "@astra/dashboard",
   "version": "1.0.0",
   "private": true,
+  "description": "Web dashboard for Astra Discord bot",
   "scripts": {
     "dev": "node src/server.ts",
     "build": "tsc -p tsconfig.api.json",
@@ -9,7 +10,7 @@
     "format": "prettier --write src"
   },
   "dependencies": {
-    "@gallium/shared": "*",
+    "@astra/shared": "*",
     "@ts-rest/core": "^3.30.0",
     "@ts-rest/express": "^3.30.0",
     "@vitejs/plugin-react": "6.0.3",

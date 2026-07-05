@@ -1,4 +1,4 @@
-# Gallium
+# Astra
 
 A Discord moderation bot monorepo built with [discord.js](https://discord.js.org/), TypeScript, and Prisma.
 
@@ -6,13 +6,14 @@ A Discord moderation bot monorepo built with [discord.js](https://discord.js.org
 
 | Package           | Description                                             |
 | ----------------- | ------------------------------------------------------- |
-| `@gallium/bot`    | Discord bot — slash commands, member events, moderation |
-| `@gallium/shared` | Shared types and constants                              |
+| `@astra/bot`      | Discord bot — slash commands, member events, moderation |
+| `@astra/dashboard`| Web dashboard for server management                     |
+| `@astra/shared`   | Shared types and constants                              |
 
 ## Prerequisites
 
-- Node.js 18+
-- npm 9+
+- Node.js 26+
+- npm 10+
 
 ## Setup
 
@@ -20,15 +21,14 @@ A Discord moderation bot monorepo built with [discord.js](https://discord.js.org
 npm install
 cp packages/bot/.env.example packages/bot/.env
 # Edit packages/bot/.env with your Discord token and client ID
-npm run prisma:generate -w @gallium/bot
-npm run prisma:migrate -w @gallium/bot
+npm run prisma:generate
+npm run prisma:migrate
 ```
 
 ## Development
 
 ```bash
-npm run dev          # Start the bot (ts-node)
-npm run deploy       # Register slash commands with Discord
+npm run dev          # Start the bot
 npm run build        # Compile all packages
 npm run lint         # Lint all packages
 npm run test         # Run tests

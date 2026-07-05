@@ -4,7 +4,7 @@ import { timeoutCommand } from '../timeout';
 import { untimeoutCommand } from '../untimeout';
 import { warningsCommand } from '../warnings';
 import { clearwarnsCommand } from '../clearwarns';
-import { AuditActions } from '@gallium/shared';
+import { AuditActions } from '@astra/shared';
 
 const { mockLogAudit, mockGetUserWarnings, mockDeleteUserWarnings } =
   vi.hoisted(() => ({

@@ -18,6 +18,6 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci
-      - run: npm run build -w @gallium/shared
+      - run: npm run build -w @astra/shared
       - run: tsc --noEmit -p packages/bot/tsconfig.json
       - run: tsc --noEmit -p packages/dashboard/tsconfig.api.json

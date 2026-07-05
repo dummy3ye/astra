@@ -21,7 +21,7 @@ jobs:
         run: npx prisma db push
         env:
           DATABASE_URL: file:./dev.db
-      - run: npm run build -w @gallium/dashboard
+      - run: npm run build -w @astra/dashboard
       - run: npx lhci autorun
         env:
           DATABASE_URL: file:../bot/dev.db

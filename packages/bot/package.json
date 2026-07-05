@@ -1,6 +1,8 @@
 {
-  "name": "@gallium/bot",
+  "name": "@astra/bot",
   "version": "1.0.0",
+  "private": true,
+  "description": "Discord moderation bot for Astra",
   "scripts": {
     "dev": "ts-node src/index.ts",
     "start": "node dist/index.js",
@@ -10,7 +12,7 @@
     "prisma:migrate": "prisma migrate dev"
   },
   "dependencies": {
-    "@gallium/shared": "*",
+    "@astra/shared": "*",
     "@libsql/client": "^0.17.4",
     "@prisma/adapter-libsql": "^7.8.0",
     "@prisma/client": "^7.8.0",

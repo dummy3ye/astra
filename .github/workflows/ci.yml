@@ -19,7 +19,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run prisma:generate -w @gallium/bot
+      - run: npm run prisma:generate -w @astra/bot
 
       - run: npm run build
 

@@ -1,4 +1,4 @@
-import { AuditAction } from '@gallium/shared';
+import { AuditAction } from '@astra/shared';
 import { EmbedBuilder, TextChannel } from 'discord.js';
 import { prisma } from '../database/client';
 import { getClient } from '../utils/clientInstance';

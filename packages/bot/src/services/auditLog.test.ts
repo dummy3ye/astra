@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { AuditActions } from '@gallium/shared';
+import { AuditActions } from '@astra/shared';
 
 const mockCreate = vi.fn();
 const mockFindUnique = vi.fn();

@@ -27,7 +27,7 @@ and versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html
 
 ### Changed
 
-- Rebranded from "gallium" to "astra" across 32 files: package names (`@gallium/*` → `@astra/*`), imports, display strings, CI pipeline names
+- Rebranded from "gallium" to "astra" across 32 files: package names, imports, display strings, CI pipeline names
 - Switched bot dev/deploy scripts from `ts-node` to `tsx` for Node 26 ESM compatibility
 
 ## [1.2.0] - 2026-07-03

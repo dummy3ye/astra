@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import messageCreateEvent from '../messageCreate';
-import { AuditActions } from '@gallium/shared';
+import { AuditActions } from '@astra/shared';
 
 const mockFindUniqueSettings = vi.fn();
 const mockUserUpsert = vi.fn();

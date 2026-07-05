@@ -1,5 +1,5 @@
 import { GuildMember, PartialGuildMember, TextChannel } from 'discord.js';
-import { AuditActions } from '@gallium/shared';
+import { AuditActions } from '@astra/shared';
 import { prisma } from '../../database/client';
 import { logAudit } from '../../services/auditLog';
 import { Event } from '../event';

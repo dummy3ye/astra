@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { PrismaClient } from '@prisma/client';
 import { PrismaLibSql } from '@prisma/adapter-libsql';
 import { createExpressEndpoints, initServer } from '@ts-rest/express';
-import { contract } from '@gallium/shared';
+import { contract } from '@astra/shared';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

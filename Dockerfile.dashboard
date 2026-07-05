@@ -9,7 +9,7 @@ RUN npm ci
 
 COPY . .
 RUN npx prisma generate --schema=packages/bot/prisma/schema.prisma
-RUN npm run build -w @gallium/shared && npm run build -w @gallium/dashboard
+RUN npm run build -w @astra/shared && npm run build -w @astra/dashboard
 
 FROM node:26-alpine AS runner
 WORKDIR /app

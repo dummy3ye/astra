@@ -4,7 +4,7 @@ import {
   PermissionFlagsBits,
   TextChannel,
 } from 'discord.js';
-import { AuditActions } from '@gallium/shared';
+import { AuditActions } from '@astra/shared';
 import { Command } from '../command';
 import { logAudit } from '../../services/auditLog';
 
